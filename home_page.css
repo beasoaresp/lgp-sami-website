@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1E1E1E;
+}
+
+@font-face {
+    font-family: 'SamiLogoFont'; 
+    src: url('typography/Garet-Book.ttf') format('truetype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Navbar Container */
+.navbar {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    
+    /* FIX 1: Change padding to percentages or smaller pixels */
+    padding: 20px 5%; 
+    
+    position: fixed; 
+    width: 100%;
+    top: 0;
+    left: 0; /* FIX 2: Ensure it starts at the very left edge */
+    z-index: 10; 
+    background: transparent;
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2vw; /* FIX 3: Use 'vw' (viewport width) so gaps shrink on smaller screens */
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Ensure the logo doesn't get squashed */
+.logo {
+    font-family: 'SamiLogoFont';
+    flex-shrink: 0; 
+    color: #F0EFEF;
+    font-size: 6rem; /* Slightly smaller for better fit */
+    text-transform: uppercase;
+}
+
+.nav-links li a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #6DD4BE; /* Matches your Cyan glow color */
+}
+
+#samiCanvas {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Puts the glow behind your nav/text */
+}
