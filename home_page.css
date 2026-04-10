@@ -6,6 +6,7 @@
 
 body {
     background-color: #1E1E1E;
+    width: 100%;
 }
 
 @font-face {
@@ -20,29 +21,25 @@ body {
     display: flex;
     justify-content: space-between; 
     align-items: center;
-    
-    /* FIX 1: Change padding to percentages or smaller pixels */
+    font-family: 'SamiLogoFont';
     padding: 20px 5%; 
-    
-    position: fixed; 
+    position: relative; 
     width: 100%;
     top: 0;
-    left: 0; /* FIX 2: Ensure it starts at the very left edge */
+    left: 0;
     z-index: 10; 
-    background: transparent;
 }
 
 /* Navigation Links */
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 2vw; /* FIX 3: Use 'vw' (viewport width) so gaps shrink on smaller screens */
+    gap: 2vw; 
     align-items: center;
     margin: 0;
     padding: 0;
 }
 
-/* Ensure the logo doesn't get squashed */
 .logo {
     font-family: 'SamiLogoFont';
     flex-shrink: 0; 
@@ -64,8 +61,8 @@ body {
 
 #samiCanvas {
     display: block;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
-    z-index: -1; /* Puts the glow behind your nav/text */
+    z-index: 1; /* Puts the glow behind your nav/text */
 }
