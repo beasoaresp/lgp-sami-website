@@ -1,6 +1,8 @@
 const canvas = document.getElementById('samiCanvas');
 const ctx = canvas.getContext('2d');
 
+
+
 function drawGlow() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -28,6 +30,8 @@ function drawGlow() {
 
     ctx.restore(); // Added to match the ctx.save() at the top
     ctx.globalCompositeOperation = 'source-over';
+
+    //canvas.style.backgroundImage = `url(${canvas.toDataURL()})`;
 }
 
 function drawBlurryPath(color, width, blur, opacity) {
