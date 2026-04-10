@@ -1,0 +1,120 @@
+@font-face {
+    font-family: 'SamiLogoFont'; 
+    src: url('typography/Garet-Book.ttf') format('truetype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+.license-card {
+    /* Richer gradient for depth */
+    background: linear-gradient(135deg, #383ABD 0%, #281697 100%);
+    border-radius: 16px;
+    padding: 32px;
+    color: #F0EFEF;
+    font-family: 'SamiLogoFont';
+    width: 70%;
+    margin: 40px auto;
+    position: relative;
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.3),
+        inset 0 1px 1px rgba(255, 255, 255, 0.1); /* Inner light edge */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.card-title {
+    font-size: 1.6rem;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    margin: 0;
+}
+
+/* Modern Toggle Design */
+.toggle-control {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 4px 10px;
+    border-radius: 8px;
+    border: 1px solid #6DD4BE;
+}
+
+.currency-badge {
+    font-size: 0.85rem;
+    color: #6DD4BE;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #F0EFEF;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #F0EFEF;
+}
+
+/* Content Layout */
+.card-body {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.feature-preview {
+    width: 110px;
+    height: 110px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    flex-shrink: 0;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 60px; /* Large gap between columns like high-end brochures */
+}
+
+.info-group p {
+    margin: 0 0 12px 0;
+    font-size: 1.05rem;
+    font-weight: 300;
+    opacity: 0.9;
+    white-space: nowrap;
+    overflow-wrap: break-word; 
+    line-height: 1.4;
+}
+
+/* Slightly dim the "No" features to emphasize value */
+.info-group.secondary p {
+    opacity: 0.6;
+}
+
+.license-card:hover {
+    /* 1. Lift the card slightly */
+    transform: translateY(-8px) scale(1.01);
+    
+    /* 2. Add a rich, layered shadow for depth */
+    box-shadow: 
+        0 30px 60px rgba(0, 0, 0, 0.5), 
+        0 0 20px rgba(109, 212, 190, 0.1); /* Subtle cyan tint to the shadow */
+
+    /* 3. Brighten the border to make it pop */
+    border: 1px solid rgba(109, 212, 190, 0.4); 
+    
+    /* 4. Shift the background color slightly for an "active" look */
+    background: linear-gradient(135deg, #4346e0 0%, #281697 100%);
+}
+
+.license-card:hover .card-title {
+    border-color: rgba(109, 212, 190, 0.5);
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}

@@ -2,7 +2,9 @@
 <html>
 <head>
     <title>SAMI</title>
-    <link rel="stylesheet" href="home_page.css">
+    <link rel="stylesheet" href="css/home_page.css">
+    <link rel="stylesheet" href="css/features.css">
+    <link rel="stylesheet" href="css/licenses.css">
     <script src="sami_Canvas.js" defer></script>
 </head>
 <body>
@@ -18,8 +20,103 @@
     
     <canvas id="samiCanvas"></canvas>
 
-    <div class="acronym"> Smart Acessible Musical Instrument </div>
+    <div class="acronym"> 
+        <h1>Smart Acessible Musical Instrument</h1> 
+    </div>
     <div class="slogan"> Control Music with your Gaze, Movement and Expressions </div>
+    <div class="features-container">
+        <div class="features-title">
+            <h1>Features</h1>
+        </div>
+        <div class="features">
+            <div class="tracking-features">
+                <div class="eye-tracking">
+                    <svg class="eye-feature-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 5C7.33333 5 3.38192 7.89883 1.5 12C3.38192 16.1012 7.33333 19 12 19C16.6667 19 20.6181 16.1012 22.5 12C20.6181 7.89883 16.6667 5 12 5ZM12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12C17 14.7614 14.7614 17 12 17ZM12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9Z" 
+                        fill="currentColor"/>
+                    </svg>
+                    <h3 class="feature-title">Eye Tracking</h3>
+                </div>
+                <div class="head-tracking">
+                    <svg class="head-feature-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C8.686 2 6 4.686 6 8c0 1.564.603 2.986 1.586 4.064.232.252.414.586.414.936v1.5C8 16.985 10.015 19 12.5 19h.5c2.485 0 4.5-2.015 4.5-4.5V13c0-.35.182-.684.414-.936C17.397 10.986 18 9.564 18 8c0-3.314-2.686-6-6-6zM9 22h6" 
+                        fill="currentColor"/>
+                    </svg>
+                    <h3 class="feature-title">Head Movement</h3>
+                </div>
+                <div class="mouth-tracking">
+                    <svg class="mouth-feature-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 19c-4.418 0-8-2.686-8-6 0-.552.448-1 1-1h14c.552 0 1 .448 1 1 0 3.314-3.582 6-8 6zm0-2c2.761 0 5-1.343 5-3H7c0 1.657 2.239 3 5 3z" 
+                        fill="currentColor"/>
+                    </svg>
+                    <h3 class="feature-title">Mouth Tracking</h3>
+                </div>
+
+                <div class="air-tracking">
+                    <svg class="air-feature-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13 3a1 1 0 0 0-1 1v2a1 1 0 1 0 2 0V4a1 1 0 0 0-1-1zm-4 4a1 1 0 0 0-1 1v12a1 1 0 1 0 2 0V8a1 1 0 0 0-1-1zm8 4a1 1 0 0 0-1 1v8a1 1 0 1 0 2 0v-8a1 1 0 0 0-1-1zm-12 4a1 1 0 0 0-1 1v4a1 1 0 1 0 2 0v-4a1 1 0 0 0-1-1z" 
+                        fill="currentColor"/>
+                    </svg>
+                    <h3 class="feature-title">Air Capture through Microphone</h3>
+                </div>
+            </div>
+            <div class="download-app">
+                <div class="mascot-container">
+                    <img src="images/mascot.png" alt="SAMI Mascot" class="mascot-img">
+                </div>
+                <div class="button-container">
+                    <div class="button">Download App</div>
+                </div>
+            </div>
+    </div>
+
+   <div class="license-card">
+        <div class="card-header">
+            <h2 class="card-title">Individual License</h2>
+            <div class="toggle-control">
+                <span class="currency-badge">0</span>
+                <span class="status-dot"></span>
+            </div>
+        </div>
+
+        <div class="card-body">
+            <div class="feature-preview"></div>
+
+            <div class="info-grid">
+                <div class="info-group">
+                    <p>Buy the app</p>
+                    <p>One payment only</p>
+                    <p>Updates for the first year</p>
+                </div>
+                <div class="info-group secondary">
+                    <p>No hardware</p>
+                    <p>No premium customer support</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="license-card">
+        <div class="card-header">
+            <h2 class="card-title">Institutional License</h2>
+            <div class="toggle-control">
+                <span class="currency-badge">0</span>
+                <span class="status-dot"></span>
+            </div>
+        </div>
+
+        <div class="card-body">
+            <div class="feature-preview"></div>
+
+            <div class="info-grid">
+                <div class="info-group">
+                    <p>Annual subscription</p>
+                    <p>Price varies based on the amount of devices/accounts</p>
+                    <p>Includes tablets/smartphones with pre-installed software and hardware mounts</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 </body>
