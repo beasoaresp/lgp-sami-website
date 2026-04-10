@@ -22,7 +22,7 @@ body {
     justify-content: space-between; 
     align-items: center;
     font-family: 'SamiLogoFont';
-    padding: 20px 5%; 
+    padding: 1px 5%; 
     position: relative; 
     width: 100%;
     top: 0;
@@ -60,9 +60,31 @@ body {
 }
 
 #samiCanvas {
-    display: block;
-    position: fixed;
+    position: relative;
     top: 0;
     left: 0;
     z-index: 1; /* Puts the glow behind your nav/text */
+    max-width: 100%;
+}
+
+.acronym {
+    color: #F0EFEF;
+    position: relative;
+    font-family: 'SamiLogoFont';
+    font-size: 2.5rem;
+    text-align: center;
+    padding: 120px 5px;
+    margin-top: -100px;
+    background-color: #1E1E1E;
+}
+
+.slogan{
+    color: #F0EFEF;
+    position: relative;
+    font-family: 'SamiLogoFont';
+    font-size: 2rem;
+    text-align: center;
+    padding: 50px 5px;
+    background: linear-gradient(to bottom, #383ABD, #86B9F5);
+    z-index: 2;
 }

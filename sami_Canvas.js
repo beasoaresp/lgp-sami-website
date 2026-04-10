@@ -1,13 +1,10 @@
 const canvas = document.getElementById('samiCanvas');
 const ctx = canvas.getContext('2d');
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
 function drawGlow() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    const verticalOffset = 100;
+    const verticalOffset = 110;
     ctx.save(); 
     ctx.translate(0, verticalOffset);
     
@@ -16,7 +13,6 @@ function drawGlow() {
     ctx.globalCompositeOperation = 'screen'; 
 
     // --- LAYER 1: Deep Blue
-    // Color, LineWidth, ShadowBlur, Opacity
     drawBlurryPath('#281697', 350, 180, 0.3);
 
     // --- LAYER 2: Mid-Blue
@@ -30,13 +26,7 @@ function drawGlow() {
 
     drawBlurryPath('#F0EFEF', 50, 30, 0.8);
 
-    // --- LAYER 5:White Core
-    ctx.shadowBlur = 20;
-    ctx.shadowColor = '#FFFFFF';
-    ctx.strokeStyle = 'rgba(240, 239, 239, 0.4)'; 
-    ctx.lineWidth = 6; 
-    renderSPath();
-
+    ctx.restore(); // Added to match the ctx.save() at the top
     ctx.globalCompositeOperation = 'source-over';
 }
 
@@ -55,36 +45,32 @@ function drawBlurryPath(color, width, blur, opacity) {
 }
 
 function drawPath() {
-
-    // Start drawing the path
     ctx.beginPath();
-    
-    // Starting point
-    ctx.moveTo(-300, canvas.height * 0.95);
 
-    // Create the "S" 
+    const h = window.innerHeight;
+
+    ctx.moveTo(-300, h * 0.85);
+
     ctx.bezierCurveTo(
-        canvas.width * 0.8, canvas.height * 1.0, // CP1: Pulls the curve way to the right
-        canvas.width * 1, canvas.height * 0.7, // CP2: High and right to create vertical space
-        canvas.width * 0.6, canvas.height * 0.5  // Midpoint: Moved to 60% width to shift S right
+        canvas.width * 0.8, h * 0.95, 
+        canvas.width * 1, h * 0.7, 
+        canvas.width * 0.6, h * 0.5  
     );
 
-    // Top Curve
-    // center/middle of the screen
     ctx.bezierCurveTo(
-        canvas.width * 0.4, canvas.height * 0.4, // CP1: Sweeps back toward the left-middle
-        canvas.width * 0.3, canvas.height * 0.2, // CP2: Pulls up toward the top-middle
-        canvas.width, canvas.height * 0.15 // End: Exits top right
+        canvas.width * 0.4, h * 0.4, 
+        canvas.width * 0.3, h * 0.2, 
+        canvas.width, h * 0.15 
     );
 
     ctx.stroke();
 }
 
-drawGlow();
-
-// Redraw if window resizes
-window.addEventListener('resize', () => {
+function resize() {
     canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    canvas.height = window.innerHeight + 300; 
     drawGlow();
-});
+}
+
+window.addEventListener('resize', resize);
+resize(); 
