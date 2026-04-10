@@ -21,6 +21,7 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 20px;
+    
 }
 
 .tracking-features > div {
@@ -34,6 +35,7 @@
     justify-content: center;
     gap: 15px;
     transition: transform 0.3s, background 0.3s;
+    background-color: var(--bg-dark);
 }
 
 .tracking-features > div:hover {

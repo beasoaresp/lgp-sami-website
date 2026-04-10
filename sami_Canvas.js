@@ -4,34 +4,43 @@ const ctx = canvas.getContext('2d');
 
 
 function drawGlow() {
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    const verticalOffset = 110;
-    ctx.save(); 
-    ctx.translate(0, verticalOffset);
+    //const verticalOffset = 110;
+    //ctx.save(); 
+    //ctx.translate(0, verticalOffset);
     
     ctx.lineCap = 'round';
     ctx.lineJoin = 'round';
     ctx.globalCompositeOperation = 'screen'; 
 
     // --- LAYER 1: Deep Blue
-    drawBlurryPath('#281697', 350, 180, 0.3);
+    drawBlurryPath('#281697', 350, 180, 0.2);
 
     // --- LAYER 2: Mid-Blue
-    drawBlurryPath('#383ABD', 300, 100, 0.4);
+    drawBlurryPath('#383ABD', 300, 100, 0.2);
 
     // --- LAYER 3: Cyan
-    drawBlurryPath('#6DD4BE', 200, 50, 0.5);
+    drawBlurryPath('#6DD4BE', 200, 50, 0.3);
 
     // --- LAYER 4: Teal
-    drawBlurryPath('#86B9F5', 100, 30, 0.6);
+    drawBlurryPath('#86B9F5', 100, 30, 0.4);
 
-    drawBlurryPath('#F0EFEF', 50, 30, 0.8);
+    drawBlurryPath('#F0EFEF', 30, 30, 0.4);
 
     ctx.restore(); // Added to match the ctx.save() at the top
-    ctx.globalCompositeOperation = 'source-over';
 
-    //canvas.style.backgroundImage = `url(${canvas.toDataURL()})`;
+    const dataUrl = canvas.toDataURL();
+    // Apply it to the body as a fixed background
+    document.body.style.backgroundImage = `url(${dataUrl})`;
+    document.body.style.backgroundAttachment = 'fixed';
+    document.body.style.backgroundSize = 'cover';
+
+    canvas.style.display = 'none';
 }
 
 function drawBlurryPath(color, width, blur, opacity) {
@@ -51,7 +60,8 @@ function drawBlurryPath(color, width, blur, opacity) {
 function drawPath() {
     ctx.beginPath();
 
-    const h = window.innerHeight;
+    const h = canvas.height;
+    const w = canvas.width;
 
     ctx.moveTo(-300, h * 0.85);
 
@@ -76,5 +86,4 @@ function resize() {
     drawGlow();
 }
 
-window.addEventListener('resize', resize);
-resize(); 
+window.onload = drawGlow; 

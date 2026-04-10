@@ -19,6 +19,9 @@ body {
     margin: 0;
     font-family: 'SamiFont'; 
     overflow-x: hidden;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
 }
 
 /* Navbar */
@@ -57,10 +60,10 @@ body {
 
 /* Hero Section */
 #samiCanvas {
-    display: block;
-    position: relative;
+    position: absolute;
     margin-top: -80px; /* Pulls under navbar */
-    z-index: 1;
+    z-index: -10;
+    pointer-events: none;
 }
 
 .acronym, .slogan {
