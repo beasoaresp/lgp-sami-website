@@ -19,18 +19,19 @@ body {
     margin: 0;
     font-family: 'SamiFont'; 
     overflow-x: hidden;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
 }
 
 /* Navbar */
 .navbar {
+    position: absolute; /* The "Magic" fix */
+    top: 0;
+    left: 0;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 50px;
-    position: relative;
+    box-sizing: border-box; /* Prevents padding from breaking the width */
     z-index: 10;
 }
 
@@ -58,17 +59,33 @@ body {
     color: var(--accent-cyan);
 }
 
-/* Hero Section */
 #samiCanvas {
-    position: absolute;
     margin-top: -80px; /* Pulls under navbar */
     z-index: -10;
     pointer-events: none;
 }
 
-.content-wrapper {
+.intro-section {
+    width: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background-repeat: no-repeat;
+    z-index: 1; /* Lower layer */
+    overflow: hidden;
+}
+
+.content-wrapper {
+    background-color: var(--bg-dark);
+    position: relative;
+    z-index: 5;
+    border-top: 1px solid rgba(255, 255, 255, 0.05); 
+    box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.5); /* Adds a shadow for depth */
+    padding-top: 50px;
 }
 
 .acronym, .slogan {

@@ -5,13 +5,15 @@ const ctx = canvas.getContext('2d');
 
 function drawGlow() {
 
+    const intro = document.querySelector('.intro-section');
+
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     //const verticalOffset = 110;
-    //ctx.save(); 
+    ctx.save(); 
     //ctx.translate(0, verticalOffset);
     
     ctx.lineCap = 'round';
@@ -36,9 +38,10 @@ function drawGlow() {
 
     const dataUrl = canvas.toDataURL();
     // Apply it to the body as a fixed background
-    document.body.style.backgroundImage = `url(${dataUrl})`;
-    document.body.style.backgroundAttachment = 'fixed';
-    document.body.style.backgroundSize = 'cover';
+    intro.style.backgroundImage = `url(${dataUrl})`;
+    intro.style.backgroundSize = 'cover';
+    intro.style.backgroundPosition = 'center';
+    intro.style.backgroundRepeat = 'no-repeat';
 
     canvas.style.display = 'none';
 }
