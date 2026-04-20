@@ -1,3 +1,17 @@
+:root {
+    --bg-dark: #1E1E1E;
+    --text-main: #F0EFEF;
+    --accent-cyan: #6DD4BE;
+    --accent-blue: #383ABD;
+    --deep-blue: #281697;
+}
+
+@font-face {
+    font-family: 'SamiFont'; 
+    src: url('typography/Garet-Book.ttf') format('truetype'); 
+    font-weight: normal;
+    font-style: normal;
+}
 
 .sami-footer {
     width: 100vw;
@@ -6,9 +20,10 @@
     right: 50%;
     margin-left: -50vw;
     margin-right: -50vw;
-    background-color: #1c1d25;
+    background-color: var(--bg-dark);
     padding: 40px 0;
     margin-top: auto;
+    z-index: 2;
 }
 
 .footer-content {

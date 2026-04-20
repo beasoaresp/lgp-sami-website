@@ -14,8 +14,7 @@
 }
 
 .license-card {
-    /* Richer gradient for depth */
-    background: linear-gradient(135deg, #383ABD 0%, #281697 100%);
+    background: var(--accent-blue);
     border-radius: 16px;
     padding: 32px;
     color: #F0EFEF;
@@ -43,7 +42,6 @@
     margin: 0;
 }
 
-/* Modern Toggle Design */
 .toggle-control {
     display: flex;
     align-items: center;
@@ -67,7 +65,7 @@
     box-shadow: 0 0 8px #F0EFEF;
 }
 
-/* Content Layout */
+
 .card-body {
     display: flex;
     align-items: flex-start;
@@ -87,7 +85,7 @@
 .info-grid {
     display: grid;
     grid-template-columns: auto auto;
-    gap: 60px; /* Large gap between columns like high-end brochures */
+    gap: 60px;
 }
 
 .info-group p {
@@ -123,6 +121,5 @@
 
 .license-card:hover .card-title {
     border-color: rgba(109, 212, 190, 0.5);
-    transform: scale(1.05);
     transition: all 0.3s ease;
 }
