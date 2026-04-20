@@ -1,0 +1,131 @@
+:root {
+    --bg-dark: #1E1E1E;
+    --text-main: #F0EFEF;
+    --accent-cyan: #6DD4BE;
+    --accent-blue: #383ABD;
+    --deep-blue: #281697;
+}
+
+@font-face {
+    font-family: 'SamiFont'; 
+    src: url('typography/Garet-Book.ttf') format('truetype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 100px auto 100px; /* Space above/below */
+    padding: 0 50px;
+    position: relative;
+    z-index: 5; /* Sit above the canvas */
+}
+
+.contact-card {
+    /* Rich Deep Blue Gradient from SAMI Palette */
+    background: linear-gradient(135deg, rgba(56, 58, 189, 0.4) 0%, rgba(40, 22, 151, 0.4) 100%);
+    backdrop-filter: blur(10px); /* Glassmorphism */
+    border: 1px solid rgba(255, 255, 255, 0.05); /* Subtle border */
+    border-radius: 20px;
+    padding: 50px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title {
+    color: #F0EFEF;
+    font-size: 2.5rem;
+    font-weight: 300; /* Modern, light font weight */
+    margin: 0;
+    text-transform: uppercase;
+}
+
+/* Two-Column Form Layout */
+.form-cols {
+    display: flex;
+    gap: 50px;
+    margin-bottom: 40px;
+}
+
+.form-col {
+    flex: 1; /* Both columns share equal width */
+}
+
+/* Individual input fields and labels */
+.input-group {
+    margin-bottom: 25px;
+}
+
+.input-group label {
+    display: block;
+    color: #F0EFEF;
+    opacity: 0.9;
+    font-weight: 500;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+/* Input/Textarea Fields */
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.2); /* Deep dark background */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle light border */
+    border-radius: 8px;
+    color: #F0EFEF;
+    font-family: 'SamiFont', sans-serif;
+    font-size: 1rem;
+    box-sizing: border-box; /* Crucial for width: 100% */
+    transition: all 0.3s ease;
+}
+
+.input-group textarea {
+    height: 170px; /* Matching the height of the two inputs on the left */
+    resize: none; /* Prevents user from breaking the layout */
+}
+
+/* Placeholder text color */
+.input-group input::placeholder,
+.input-group textarea::placeholder {
+    color: rgba(240, 239, 239, 0.3);
+}
+
+/* THE GLOW EFFECT (on Focus) */
+.input-group input:focus,
+.input-group textarea:focus {
+    outline: none;
+    border-color: #6DD4BE; /* Cyan Glow Border */
+    background: rgba(109, 212, 190, 0.03); /* Subtle cyan tint */
+    box-shadow: 0 0 15px rgba(109, 212, 190, 0.4);
+}
+
+/* Submit Button Centering */
+.submit-container {
+    text-align: center;
+}
+
+/* Reusing your SAMI 'button' styles but slightly tweaked for form submission */
+.button {
+    background: #6DD4BE;
+    color: #1E1E1E;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 50px;
+    font-weight: 800;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: 'SamiFont', sans-serif;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.button:hover {
+    box-shadow: 0 0 20px rgba(109, 212, 190, 0.8);
+    transform: translateY(-2px);
+    background: #FFFFFF;
+}

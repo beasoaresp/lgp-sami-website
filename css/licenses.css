@@ -1,5 +1,13 @@
+:root {
+    --bg-dark: #1E1E1E;
+    --text-main: #F0EFEF;
+    --accent-cyan: #6DD4BE;
+    --accent-blue: #383ABD;
+    --deep-blue: #281697;
+}
+
 @font-face {
-    font-family: 'SamiLogoFont'; 
+    font-family: 'SamiFont'; 
     src: url('typography/Garet-Book.ttf') format('truetype'); 
     font-weight: normal;
     font-style: normal;
@@ -11,7 +19,7 @@
     border-radius: 16px;
     padding: 32px;
     color: #F0EFEF;
-    font-family: 'SamiLogoFont';
+    font-family: 'SamiFont';
     width: 70%;
     margin: 40px auto;
     position: relative;

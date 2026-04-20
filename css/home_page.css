@@ -66,6 +66,11 @@ body {
     pointer-events: none;
 }
 
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
 .acronym, .slogan {
     text-align: center;
     position: relative;
@@ -82,5 +87,5 @@ body {
 .slogan {
     font-size: 1.2rem;
     opacity: 0.8;
-    margin-bottom: 100px;
+    margin-bottom: 60px;
 }
