@@ -122,3 +122,14 @@
     background: rgba(109, 212, 190, 0.05);
     transform: translateY(-5px);
 }
+
+.icon {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.check {
+    color: #6DD4BE; /* your cyan */
+}
