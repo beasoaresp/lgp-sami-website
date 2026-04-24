@@ -78,13 +78,6 @@
     box-shadow: 0 0 8px #F0EFEF;
 }
 
-
-/*.card-body {
-    display: flex;
-    align-items: flex-start;
-    gap: 40px;
-}*/
-
 .feature-preview {
     width: 110px;
     height: 110px;
@@ -98,24 +91,42 @@
 .info-grid {
     display: grid;
     grid-template-rows: auto auto;
-    gap: 40px;
 }
 
-
+.info-group {
+    margin-top: 20px;
+}
 
 .info-group p {
     margin: 0 0 12px 0;
     font-size: 1.05rem;
     font-weight: 300;
     opacity: 0.9;
-    /*white-space: nowrap;
-    overflow-wrap: break-word;*/ 
     line-height: 1.4;
 }
 
 /* Slightly dim the "No" features to emphasize value */
 .info-group.secondary p {
     opacity: 0.6;
+}
+
+.license-card1, .license-card2 {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 30px;
+    /*display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;*/
+    transition: transform 0.3s, background 0.3s;
+    background-color: var(--bg-dark);
+}
+
+.tracking-features > div:hover {
+    background: rgba(109, 212, 190, 0.05);
+    transform: translateY(-5px);
 }
 
 .license-card:hover {
