@@ -15,8 +15,8 @@
 
 .contact-container {
     margin-top: 50px;
-    margin: 100px auto 100px; /* Space above/below */
-    padding: 0 50px;
+    margin: 100px auto 0; /* Space above/below */
+    padding: 0 150px;
     position: relative;
 }
 
