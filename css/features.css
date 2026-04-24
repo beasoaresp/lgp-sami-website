@@ -13,7 +13,7 @@
     font-style: normal;
 }
 
-.features-container {
+.features-container, .licenses-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 50px 20px;
