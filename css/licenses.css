@@ -124,28 +124,7 @@
     background-color: var(--bg-dark);
 }
 
-.tracking-features > div:hover {
+.license-card1:hover, .license-card2:hover {
     background: rgba(109, 212, 190, 0.05);
     transform: translateY(-5px);
-}
-
-.license-card:hover {
-    /* 1. Lift the card slightly */
-    transform: translateY(-8px) scale(1.01);
-    
-    /* 2. Add a rich, layered shadow for depth */
-    box-shadow: 
-        0 30px 60px rgba(0, 0, 0, 0.5), 
-        0 0 20px rgba(109, 212, 190, 0.1); /* Subtle cyan tint to the shadow */
-
-    /* 3. Brighten the border to make it pop */
-    border: 1px solid rgba(109, 212, 190, 0.4); 
-    
-    /* 4. Shift the background color slightly for an "active" look */
-    background: linear-gradient(135deg, #4346e0 0%, #281697 100%);
-}
-
-.license-card:hover .card-title {
-    border-color: rgba(109, 212, 190, 0.5);
-    transition: all 0.3s ease;
 }
