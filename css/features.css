@@ -24,21 +24,6 @@
     margin-bottom: 30px;
 }
 
-.features-title-login h1 {
-    color: var(--accent-cyan);
-    margin-bottom: 30px;
-    text-align: center;
-}
-
-.login_register {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    margin-top: 200px;
-    z-index: -10;
-    pointer-events: none;
-}
-
 .features {
     display: grid;
     grid-template-columns: 2fr 1fr;

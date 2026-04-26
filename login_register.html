@@ -6,6 +6,9 @@
     <link rel="stylesheet" href="css/home_page.css">
     <link rel="stylesheet" href="css/features.css">
     <link rel="stylesheet" href="css/licenses.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="sami_Canvas.js" defer></script>
 </head>
 <body>
@@ -20,20 +23,37 @@
     </nav>
 
         <!--<canvas id="samiCanvas"></canvas>-->
-    <div class="login_register">
-        <div>
-            <div  class="features-title-login">
+    <div style="margin-top: 200px;" class="login_register" >
+        <div style="border-right: solid;">
+            
+            <div class="features-title-login"  >
+                  <ul class="w3-ul">
+                    <!--<li><i class="fa fa-lock"></i></li>
+                    <li class="w3-large"><i class="fa fa-lock"></i></li>
+                    <li class="w3-xlarge"><i class="fa fa-lock"></i></li>
+                    <li class="w3-xxlarge"><i class="fa fa-lock"></i></li>
+                    <li class="w3-xxxlarge"><i class="fa fa-lock"></i></li>-->
+                    <li class="w3-jumbo"><i class="fa fa-lock"></i></li>
+                </ul>
                 <h1 >Restricted Resources</h1>
             </div>
-            <div>
-
-                <p class="feature-title" >Video Tutorials </p>           
-                <p class="feature-title" >Music Sheets </p>
+            <div class="feature-title">
+                <h3>   <i class="fa fa-play"></i>  Video Tutorials</h3>          
+                <h3 style="margin-bottom: 100px;"><i class="fa fa-music"></i>  Music Sheets  </h3>
             </div>
         </div>
-        <div class="download-app">
-            <div class="button-container">
-                <div >Download App</div>
+        <div class="register-tutor-quare">
+            <div class="feature-title" style="margin: 50px;" >
+                
+                <h1 >Registered Tutors</h1>
+            </div>
+            <div  style="text-align: center;">
+                <form  action="/action_page.php">
+
+                    <input class="input-registe-tutors" placeholder="E-mail" type="text" id="fname" name="fname"><br><br>
+                    <input style="margin-bottom: 50px;" class="input-registe-tutors" placeholder="Password" type="text" id="lname" name="lname"><br><br>
+                    <input style="margin-top: 20px; " class="button" type="submit" value="Login">
+                </form>
             </div>
         </div>
     </div>
