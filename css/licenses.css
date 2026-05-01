@@ -128,8 +128,13 @@
     height: 18px;
     margin-right: 10px;
     vertical-align: middle;
+    flex-shrink: 0;
 }
 
-.check {
-    color: #6DD4BE; /* your cyan */
+.check, .cross {
+    color: var(--accent-cyan);
+}
+
+.check_cross {
+    display: flex;
 }
