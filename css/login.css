@@ -1,0 +1,62 @@
+:root {
+    --bg-dark: #1E1E1E;
+    --text-main: #F0EFEF;
+    --accent-cyan: #6DD4BE;
+    --accent-blue: #383ABD;
+    --deep-blue: #281697;
+}
+
+@font-face {
+    font-family: 'SamiFont'; 
+    src: url('typography/Garet-Book.ttf') format('truetype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    margin: 0;
+    font-family: 'SamiFont'; 
+    overflow-x: hidden;
+}
+
+.login_register {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    
+    z-index: -10;
+    pointer-events: none;
+}
+
+.features-title-login {
+    color: var(--accent-cyan);
+
+    text-align: center;
+    margin: 100px;
+}
+
+.input-registe-tutors{
+    border: 2px solid transparent;
+    border-radius: 8px;
+    width: 470px;
+    height: -10px;
+    font-size: 15px;
+    padding: 12px;
+    
+    
+    background-color: #383ABD;
+    color: white;
+    
+}
+
+.register-tutor-quare {
+    display: grid;
+    /*grid-template-rows: 70% 30%;*/
+    margin-right: 50px;
+    margin-left: 10px;
+    background-image: linear-gradient(to bottom,#281697, #86B9F5);
+    border-radius: 20px;
+    padding: 20px;
+}
