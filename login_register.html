@@ -1,61 +1,83 @@
 <!DOCTYPE html>
 <html>
-<html>
+
 <head>
     <title>SAMI</title>
     <link rel="stylesheet" href="css/home_page.css">
     <link rel="stylesheet" href="css/features.css">
     <link rel="stylesheet" href="css/licenses.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/login.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="sami_Canvas.js" defer></script>
+    
 </head>
 <body>
 
     <nav class="navbar">
         <div class="logo">SAMI</div>
-        <ul class="nav-links">
-            <li><a href="home_page.html">Home</a></li>
-            <li><a href="login_register.html">For Tutors</a></li>
-
-        </ul>
+        <div class="menu">
+            <ul class="nav-links">
+                <li><a href="home_page.html">Home</a></li>
+                <li><a href="login_register.html">For Tutors</a></li>
+            </ul>
+            <div class="button-container">
+                <div class="button">Download App</div>
+            </div>
+        </div>
     </nav>
 
+    <main class="content-wrapper">
         <!--<canvas id="samiCanvas"></canvas>-->
-    <div style="margin-top: 200px;" class="login_register" >
-        <div style="border-right: solid;">
-            
-            <div class="features-title-login"  >
-                  <ul class="w3-ul">
-                    <!--<li><i class="fa fa-lock"></i></li>
-                    <li class="w3-large"><i class="fa fa-lock"></i></li>
-                    <li class="w3-xlarge"><i class="fa fa-lock"></i></li>
-                    <li class="w3-xxlarge"><i class="fa fa-lock"></i></li>
-                    <li class="w3-xxxlarge"><i class="fa fa-lock"></i></li>-->
-                    <li class="w3-jumbo"><i class="fa fa-lock"></i></li>
-                </ul>
-                <h1 >Restricted Resources</h1>
-            </div>
-            <div class="feature-title">
-                <h3>   <i class="fa fa-play"></i>  Video Tutorials</h3>          
-                <h3 style="margin-bottom: 100px;"><i class="fa fa-music"></i>  Music Sheets  </h3>
-            </div>
-        </div>
-        <div class="register-tutor-quare">
-            <div class="feature-title" style="margin: 50px;" >
+        <div style="margin-top: 200px;" class="login_register" >
+            <div style="border-right: solid;">
                 
-                <h1 >Registered Tutors</h1>
+                <div class="features-title-login"  >
+                    <div class="lock">
+                        <svg class="icon_lock" viewBox="0 0 24 24">
+                            <path d="M7 10V7a5 5 0 0 1 10 0v3M6 10h12v10H6V10z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <h1 >Restricted Resources</h1>
+                    </div>
+                    <div class="extras">
+                        <div class="play_music">
+                            <svg class="icon_play" viewBox="0 0 24 24">
+                                <path d="M8 5v14l11-7z" fill="#F0EFEF"/>
+                            </svg>
+                            <p>Video Tutorial</p>
+                        </div>
+                        <div class="play_music">
+                            <svg class="icon_music" viewBox="0 0 24 24">
+                                <path d="M9 18V6l10-2v12" fill="none" stroke="#F0EFEF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="6" cy="18" r="3" fill="none" stroke="#F0EFEF" stroke-width="2"/>
+                                <circle cx="16" cy="16" r="3" fill="none" stroke="#F0EFEF" stroke-width="2"/>
+                            </svg>
+                            <p>Music Sheets</p>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
-            <div  style="text-align: center;">
-                <form  action="/action_page.php">
-
-                    <input class="input-registe-tutors" placeholder="E-mail" type="text" id="fname" name="fname"><br><br>
-                    <input style="margin-bottom: 50px;" class="input-registe-tutors" placeholder="Password" type="text" id="lname" name="lname"><br><br>
-                    <input style="margin-top: 20px; " class="button" type="submit" value="Login">
-                </form>
+            <div class="register-tutor-quare">
+                <div class="feature-title" style="margin: 50px;" >        
+                    <h1 >Registered Tutors</h1>
+                </div>
+                <div  style="text-align: center;">
+                    <form  action="/action_page.php">
+                        <input class="input-registe-tutors" placeholder="E-mail" type="text" id="fname" name="fname">
+                        <input style="margin-bottom: 50px;" class="input-registe-tutors" placeholder="Password" type="text" id="lname" name="lname">
+                        <input style="margin-top: 20px; " class="button" type="submit" value="Login">
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
+    </main>
+    
+    <footer class="sami-footer">
+        <div class="footer-content">
+            <p class="copyright">2026 SAMI. All rights reserved</p>
+        </div>
+    </footer>
+
 </body>
 </html>
