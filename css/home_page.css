@@ -152,7 +152,6 @@ body {
 .mockup-image img {
     max-width: 100%;
     object-fit: cover;
-    clip-path: inset(10% 10% 10% 10%);
 }
 
 /* Desktop View: Split into two columns */
