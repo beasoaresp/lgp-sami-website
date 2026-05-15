@@ -89,26 +89,72 @@ body {
     position: relative;
     z-index: 5;
     border-top: 1px solid rgba(255, 255, 255, 0.05); 
-    box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.5); /* Adds a shadow for depth */
+    box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.5);
     padding-top: 50px;
     padding-bottom: 100px;
 }
 
-.acronym, .slogan {
-    text-align: center;
-    position: relative;
-    z-index: 2;
-    padding: 0 20px;
+.brand-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: center;
+    max-width: 1500px;
+    margin: 100px auto 0;
+    padding: 20px;
+    z-index: 5;
 }
 
-.acronym h1 {
-    font-size: 3.5rem;
+/* Left Column Styling */
+.brand-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: left;
+}
+
+.brand-info .acronym, 
+.brand-info .slogan {
+    text-align: left;
+    padding: 0;
+}
+
+.brand-info .acronym h1 {
+    font-size: 3rem;
+    margin: 0;
+    line-height: 1.1;
+    color: var(--text-main);
+}
+
+.brand-info .slogan {
+    font-size: 1.3rem;
+    color: var(--text-main);
     margin-bottom: 10px;
-    text-transform: uppercase;
+    opacity: 0.8;
 }
 
-.slogan {
-    font-size: 1.2rem;
-    opacity: 0.8;
-    margin-bottom: 60px;
+.brand-info .text {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--text-main);
+    max-width: 600px;
+}
+
+
+.mockup-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.mockup-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Desktop View: Split into two columns */
+@media (min-width: 992px) {
+    .brand-container {
+        grid-template-columns: 1fr 1fr;
+    }
 }
