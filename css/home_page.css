@@ -46,6 +46,7 @@ body {
     display: flex;
     gap: 30px;
     align-items: center;
+    margin-right: 30px;
 }
 
 .nav-links a {
@@ -57,6 +58,10 @@ body {
 
 .nav-links a:hover {
     color: var(--accent-cyan);
+}
+
+.menu {
+    display: flex;
 }
 
 #samiCanvas {
