@@ -94,6 +94,16 @@ body {
     padding-bottom: 100px;
 }
 
+.content-wrapper-register {
+    background-color: var(--bg-dark);
+    position: relative;
+    z-index: 5;
+    border-top: 1px solid rgba(255, 255, 255, 0.05); 
+    box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.5);
+    padding-top: 50px;
+
+}
+
 .brand-container {
     display: grid;
     grid-template-columns: 1fr;
