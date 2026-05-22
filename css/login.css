@@ -40,6 +40,10 @@ body {
     margin: 100px;
 }
 
+.restricted {
+    box-shadow: 5px 0px 5px -4px #2b5e52;
+}
+
 .input-registe-tutors{
     border: 2px solid transparent;
     border-radius: 8px;
@@ -113,4 +117,20 @@ form input, form .button-container {
 
 input::placeholder {
     color: var(--text-main);
+}
+
+.register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.register a {
+    color: var(--text-main);
+}
+
+.register a:hover {
+    font-weight: bold;
 }
