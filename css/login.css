@@ -31,14 +31,11 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 50px;
-    
     z-index: -10;
-    pointer-events: none;
 }
 
 .features-title-login {
     color: var(--accent-cyan);
-
     text-align: center;
     margin: 100px;
 }
@@ -51,20 +48,29 @@ body {
     font-size: 15px;
     padding: 12px;
     color: white;
-    
     background-color: #383ABD;
-    opacity: 40%;
-    
-    
+    opacity: 40%;   
 }
 
 .register-tutor-quare {
-    display: grid;
     margin-right: 50px;
     margin-left: 10px;
     background-image: linear-gradient(to bottom, #383ABD, #86B9F5);
     border-radius: 20px;
     padding: 20px;
+    align-content: center;
+}
+
+.register-tutor-quare h1 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.form_inputs {
+    align-self: center;
+    display: flex;
+    justify-content: center;
 }
 
 .extras {
@@ -98,4 +104,13 @@ body {
     width: 2rem;
     height: 2rem;
     margin-right: 10px;
+}
+
+
+form input, form .button-container {
+    margin-top: 30px;
+}
+
+input::placeholder {
+    color: var(--text-main);
 }
