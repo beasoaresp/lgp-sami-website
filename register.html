@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
 </head>
+
 <body>
 
     <nav class="navbar">
@@ -29,37 +29,34 @@
     </nav>
 
     <main class="content-wrapper-register">
- 
-        <!--<canvas id="samiCanvas"></canvas>-->
-            <div class="register-tutor-quare-register">  
-                <div class="register-content"> 
-                    <h1>Register Tutor</h1>
-                    <div class="form_inputs">
-                        <form  action="/action_page.php">
-                            <div class="login_register">
-                                <div class="personal-info">
-                                    <h3>Personal information</h3>
-                                    <input class="input-registe-tutors" placeholder="Frist Name" type="text" id="lfristname" name="lfristname"><br>
-                                    <input class="input-registe-tutors" placeholder="Last Name" type="text" id="llastname" name="llastname"><br>
-                                    <input class="input-registe-tutors" placeholder="Birthday" type="datetime" id="ldata" name="ldata"><br>
-                                </div>
-                                <div class="personal-info">
-                                    <h3>Account information</h3>
-                                    <input class="input-registe-tutors" placeholder="E-mail" type="text" id="fname" name="fname"><br>
-                                    <input class="input-registe-tutors" placeholder="Password" type="password" id="lpassword" name="lpassword"><br>
-                                    <input class="input-registe-tutors" placeholder="Confirm Password" type="password" id="lconfirmpassword" name="lconfirmpassword"><br>
-                                </div>
+        <div class="register-tutor-quare-register">  
+            <div class="register-content"> 
+                <h1>Register Tutor</h1>
+                <div class="form_inputs">
+                    <form id="register-form">
+                        <div class="login_register">
+                            <div class="personal-info">
+                                <h3>Personal information</h3>
+                                <input class="input-registe-tutors" placeholder="First Name" type="text" id="lfirstname" name="lfirstname" required><br>
+                                <input class="input-registe-tutors" placeholder="Last Name" type="text" id="llastname" name="llastname" required><br>
+                                <input class="input-registe-tutors" placeholder="Birthday" type="date" id="ldata" name="ldata" required><br>
                             </div>
-                            <div class="register-content"> 
-                                <div class="button-container">
-                                    <button type="submit" class="button">Register</button>
-                                </div>
+                            <div class="personal-info">
+                                <h3>Account information</h3>
+                                <input class="input-registe-tutors" placeholder="E-mail" type="email" id="lemail" name="lemail" required><br>
+                                <input class="input-registe-tutors" placeholder="Password" type="password" id="lpassword" name="lpassword" required><br>
+                                <input class="input-registe-tutors" placeholder="Confirm Password" type="password" id="lconfirmpassword" name="lconfirmpassword" required><br>
                             </div>
-                        </form>    
-                    </div>
-                </div>  
-            </div>
-    
+                        </div>
+                        <div class="register-content"> 
+                            <div class="button-container">
+                                <button type="submit" class="button">Register</button>
+                            </div>
+                        </div>
+                    </form>    
+                </div>
+            </div>  
+        </div>
     </main>
     
     <footer class="sami-footer">
@@ -67,6 +64,8 @@
             <p class="copyright">2026 SAMI. All rights reserved</p>
         </div>
     </footer>
+
+    <script type="module" src="javascript/register.js"></script>
 
 </body>
 </html>
