@@ -22,7 +22,7 @@ loginForm.addEventListener('submit', (e) => {
             alert("Welcome back!");
             
             // Redirect the user to your main app page or protected page
-            window.location.href = "home_page.html";
+            window.location.href = "resources.html";
         })
         .catch((error) => {
             // Catch error states (such as wrong password, user not found)
