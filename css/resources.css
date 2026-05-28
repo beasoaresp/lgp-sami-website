@@ -94,14 +94,21 @@
 .info-grid {
     display: grid;
     grid-template-rows: auto auto;
+    justify-content: center;
 }
 
 .info-group {
     margin-top: 20px;
+    width: 200px;
+    text-align: center;
+}
+
+.info-group:first-child {
+    border-bottom: 1px solid #6DD4BE;
 }
 
 .info-group p {
-    margin: 0 0 12px 0;
+    margin: 10px 0 12px 0;
     font-size: 1.05rem;
     font-weight: 300;
     opacity: 0.9;
@@ -115,20 +122,4 @@
 .lesson-card1:hover {
     background: rgba(109, 212, 190, 0.05);
     transform: translateY(-5px);
-}
-
-.icon {
-    width: 18px;
-    height: 18px;
-    margin-right: 10px;
-    vertical-align: middle;
-    flex-shrink: 0;
-}
-
-.check, .cross {
-    color: var(--accent-cyan);
-}
-
-.check_cross {
-    display: flex;
 }
