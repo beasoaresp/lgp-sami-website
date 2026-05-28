@@ -1,0 +1,134 @@
+:root {
+    --bg-dark: #1E1E1E;
+    --text-main: #F0EFEF;
+    --accent-cyan: #6DD4BE;
+    --accent-blue: #383ABD;
+    --deep-blue: #281697;
+}
+
+@font-face {
+    font-family: 'SamiFont'; 
+    src: url('typography/Garet-Book.ttf') format('truetype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+.content-wrapper {
+    padding-top: 200px;
+}
+
+.resources h1 {
+    margin-left: 50px;
+}
+
+.lessons-container {
+    display: flex; 
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 30px;
+    padding: 20px 50px;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-cyan) rgba(255, 255, 255, 0.02);
+}
+
+.lessons-container::-webkit-scrollbar-track {
+    background: #252525;
+    border-radius: 10px;
+}
+
+.lessons-container::-webkit-scrollbar-thumb {
+    background: var(--accent-cyan);
+    border-radius: 10px;
+    border: 1px solid #252525;
+}
+
+.lessons-container::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-cyan);
+}
+
+.lesson-card1 {
+    color: #F0EFEF;
+    font-family: 'SamiFont';
+    width: 300px;
+    margin: 0 auto;
+    position: relative;
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.3),
+        inset 0 1px 1px rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 20px;
+    padding: 30px;
+    transition: transform 0.3s, background 0.3s;
+    background-color: var(--bg-dark);
+    flex-shrink: 0;
+}
+
+.card-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.card-title {
+    font-size: 1.6rem;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    margin: 0;
+}
+
+.feature-preview {
+    width: 110px;
+    height: 110px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    flex-shrink: 0;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    align-content: center;
+    margin: 0 auto;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-rows: auto auto;
+}
+
+.info-group {
+    margin-top: 20px;
+}
+
+.info-group p {
+    margin: 0 0 12px 0;
+    font-size: 1.05rem;
+    font-weight: 300;
+    opacity: 0.9;
+    line-height: 1.4;
+}
+
+.info-group.secondary p {
+    opacity: 0.6;
+}
+
+.lesson-card1:hover {
+    background: rgba(109, 212, 190, 0.05);
+    transform: translateY(-5px);
+}
+
+.icon {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+    vertical-align: middle;
+    flex-shrink: 0;
+}
+
+.check, .cross {
+    color: var(--accent-cyan);
+}
+
+.check_cross {
+    display: flex;
+}
