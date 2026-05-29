@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
 </head>
 <body>
 
@@ -20,8 +19,20 @@
             <ul class="nav-links">
                 <li><a href="home_page.html">Home</a></li>
                 <li><a href="team.html">Team</a></li>
-                <li><a href="login_register.html">For Tutors</a></li>
+                <li class="show-logged-out"><a href="login_register.html">For Tutors</a></li>
+                <li class="show-logged-in"><a href="resources.html">Lessons</a></li>
+                <li class="show-logged-in"><a href="profile.html">Account</a></li>
             </ul>
+            <div class="icon_cart">
+                <button onclick = "window.location.href='cart.html';">
+                    <svg id="icon_cart" viewBox="0 0 24 24">
+                        <path d="M3 5H5L7 15H17L19 8H8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="9" cy="19" r="1.5" fill="currentColor"/>
+                        <circle cx="17" cy="19" r="1.5" fill="currentColor"/>
+                    </svg>
+                    <span class="cart-badge" id="cartBadge">0</span>
+                </button>    
+            </div>
             <div class="button-container">
                 <div class="button">Download App</div>
             </div>
@@ -29,11 +40,9 @@
     </nav>
 
     <main class="content-wrapper">
-        <!--<canvas id="samiCanvas"></canvas>-->
-        <div style="margin-top: 200px;" class="login_register" >
-            <div style="border-right: solid;">
-                
-                <div class="features-title-login"  >
+        <div style="margin-top: 150px;" class="login_register">
+            <div class="restricted">
+                <div class="features-title-login">
                     <div class="lock">
                         <svg class="icon_lock" viewBox="0 0 24 24">
                             <path d="M7 10V7a5 5 0 0 1 10 0v3M6 10h12v10H6V10z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -57,14 +66,13 @@
                         </div>
                     </div>
                 </div>
-                
             </div>
             <div class="register-tutor-quare">     
                 <h1>Registered Tutors</h1>
                 <div class="form_inputs">
-                    <form  action="/action_page.php">
-                        <input class="input-registe-tutors" placeholder="E-mail" type="text" id="fname" name="fname"><br>
-                        <input class="input-registe-tutors" placeholder="Password" type="password" id="lname" name="lname"><br>
+                    <form id="login-form">
+                        <input class="input-registe-tutors" placeholder="E-mail" type="email" id="login-email" name="fname" required><br>
+                        <input class="input-registe-tutors" placeholder="Password" type="password" id="login-password" name="lname" required><br>
                         <div class="button-container">
                             <button type="submit" class="button">Login</button>
                         </div>
@@ -72,7 +80,7 @@
                 </div>
                 <div class="register">
                     <p>Don't have an account?</p>
-                    <a href="login_register.html">Register</a>
+                    <a href="register.html">Register</a>
                 </div>
             </div>
         </div>
@@ -83,6 +91,9 @@
             <p class="copyright">2026 SAMI. All rights reserved</p>
         </div>
     </footer>
+
+    <script type="module" src="javascript/navbar.js"></script>
+    <script type="module" src="javascript/login.js"></script>
 
 </body>
 </html>

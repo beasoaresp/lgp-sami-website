@@ -34,8 +34,20 @@ function drawGlow() {
 
     drawBlurryPath('#F0EFEF', 30, 30, 0.4);
 
+
     ctx.restore(); // Added to match the ctx.save() at the top
 
+    const overlayGradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+    
+    // Smooth dark-mode fade: solid at the top to protect the navbar/titles, fading down
+    overlayGradient.addColorStop(0.0, 'rgba(30, 30, 30, 0.65)'); // 85% dark at top
+    overlayGradient.addColorStop(0.5, 'rgba(30, 30, 30, 0.50)'); // 60% dark mid-way
+    overlayGradient.addColorStop(1.0, 'rgba(30, 30, 30, 0.20)'); // Lightest at bottom
+
+    ctx.fillStyle = overlayGradient;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    
     const dataUrl = canvas.toDataURL();
     // Apply it to the body as a fixed background
     intro.style.backgroundImage = `url(${dataUrl})`;

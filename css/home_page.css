@@ -41,6 +41,10 @@ body {
     letter-spacing: 2px;
 }
 
+.show-logged-in {
+    display: none !important;
+}
+
 .nav-links {
     list-style: none;
     display: flex;
@@ -58,11 +62,74 @@ body {
 
 .nav-links a:hover {
     color: var(--accent-cyan);
+    transform: scale(1.05);
 }
 
 .menu {
     display: flex;
 }
+
+.icon_cart {
+    display: flex;
+    align-items: center;
+    
+}
+
+.icon_cart button {
+    width: 50px;
+    height: 50px;
+    background: var(--accent-cyan);
+    border-radius: 50%;
+    margin-right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    border: none;
+}
+
+.icon_cart button:hover {
+    box-shadow: 0 0 20px var(--accent-cyan);
+}
+
+#icon_cart {
+    margin: 0;
+    width: 20px;
+    height: 20px;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: var(--deep-blue); /* Eye-catching red/pink notification color */
+    color: var(--text-main);
+    font-size: 0.75rem;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease;
+}
+
+.cart-badge.bump {
+    transform: scale(1.2);
+}
+
+.currency-badge {
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.currency-badge:hover {
+    opacity: 0.8;
+}
+
 
 #samiCanvas {
     margin-top: -80px;
