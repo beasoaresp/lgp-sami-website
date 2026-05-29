@@ -36,6 +36,7 @@ registerForm.addEventListener('submit', async (e) => {
             lastName: lastName,
             birthday: birthday,
             email: email,
+            license: "None",
             role: "tutor",
             createdAt: new Date()
         });
