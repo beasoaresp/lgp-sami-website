@@ -37,38 +37,23 @@
         </div>
     </nav>
 
-    <main id="profile-wrapper" class="content-wrapper" style="display: none;">
-        <div class="profile-card">
-            <div class="avatar-circle">
-                <span id="avatar-initials">TS</span>
+    <main id="cart-wrapper" class="content-wrapper">
+        <div class="profile-card"> <h1 id="welcome-heading">Your Checkout Cart</h1>
+
+            <div id="cart-items-container" class="profile-details">
+                <p class="empty-message">Loading your items...</p>
             </div>
-            
-            <h1 id="welcome-heading">Welcome, Tutor</h1>
-            <button id="logout-btn" class="logout-badge">Log Out</button>
 
-            <div class="profile-details">
-                <div class="detail-row">
-                    <label>Full Name:</label>
-                    <span id="profile-fullname">Loading...</span>
+            <div class="cart-summary border-top-divider">
+                <div class="detail-row total-row">
+                    <label>Total Amount:</label>
+                    <span id="cart-total">0.00€</span>
                 </div>
-                <div class="detail-row">
-                    <label>Email Address:</label>
-                    <span id="profile-email">Loading...</span>
-                </div>
-                <div class="detail-row">
-                    <label>Birthday:</label>
-                    <span id="profile-birthday">Loading...</span>
-                </div>
-                <div class="detail-row">
-                    <label>Licenses:</label>
-                    <span id="profile-license">Loading...</span>
-                </div>
+            </div>
 
-                <div style="border-top: 1px solid rgba(255, 255, 255, 0.08); margin-top: 20px; padding-top: 25px;">
-                    <h3 style="color: var(--text-main); font-size: 1.1rem; text-align: left; margin-bottom: 15px;">Purchased Access Licenses</h3>
-                    <div id="owned-licenses-container">
-                        </div>
-                </div>
+            <div class="cart-actions">
+                <button id="clear-cart-btn" class="logout-badge">Clear Cart</button>
+                <button id="checkout-btn" class="button btn-pay">Proceed to Payment</button>
             </div>
         </div>
     </main>
@@ -80,7 +65,7 @@
     </footer>
 
     <script type="module" src="javascript/navbar.js"></script>
-    <script type="module" src="javascript/profile.js"></script>
+    <script type="module" src="javascript/checkout.js"></script>
 
 </body>
 </html>
