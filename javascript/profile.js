@@ -24,6 +24,7 @@ onAuthStateChanged(auth, async (user) => {
                 document.getElementById('profile-fullname').innerText = `${firstName} ${lastName}`;
                 document.getElementById('profile-email').innerText = user.email;
                 document.getElementById('profile-birthday').innerText = tutorData.birthday || "Not set";
+                document.getElementById('profile-license').innerText = tutorData.license || "None";
                 
                 // Set avatar initials dynamically
                 const initials = (firstName.charAt(0) + lastName.charAt(0)).toUpperCase();
