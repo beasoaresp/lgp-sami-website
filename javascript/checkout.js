@@ -1,3 +1,5 @@
+import { auth, db } from './firebase_config.js';
+import { doc, updateDoc, arrayUnion } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 import { updateCartBadge } from './navbar.js';
 
 const PRICE_LIST = {
@@ -77,8 +79,7 @@ if (clearBtn) {
 
 // Handle the checkout flow cleanly
 if (checkoutBtn) {
-    checkoutBtn.addEventListener('click', () => {
-        // 1. Pull from the CORRECT storage key: 'SAMI_CART'
+    checkoutBtn.addEventListener('click', async () => {
         const currentCart = JSON.parse(localStorage.getItem('SAMI_CART')) || [];
 
         if (currentCart.length === 0) {
@@ -86,26 +87,38 @@ if (checkoutBtn) {
             return;
         }
 
-        // 2. Get existing owned licenses or initialize an empty array
-        const ownedLicenses = JSON.parse(localStorage.getItem('SAMI_OWNED_LICENSES')) || [];
+        // CRITICAL CHECK: Make sure the user is actually logged in before processing payment
+        const user = auth.currentUser;
+        if (!user) {
+            alert('You must be logged in to purchase a license!');
+            window.location.href = 'login_register.html';
+            return;
+        }
 
-        // 3. Merge the cart items into the owned licenses list
-        const updatedLicenses = [...ownedLicenses, ...currentCart];
+        try {
+            // 1. Target this tutor's distinct document reference in Firestore
+            const docRef = doc(db, "tutors", user.uid);
 
-        // 4. Save the updated licenses back to localStorage
-        localStorage.setItem('SAMI_OWNED_LICENSES', JSON.stringify(updatedLicenses));
+            // 2. Extract just the item names from the cart array
+            const purchasedLicenseNames = currentCart.map(item => item.name);
 
-        // 5. Clear the actual cart key from storage
-        localStorage.removeItem('SAMI_CART'); 
+            // 3. Save directly to Firebase using arrayUnion (avoids duplicates)
+            await updateDoc(docRef, {
+                ownedLicenses: arrayUnion(...purchasedLicenseNames)
+            });
 
-        // 6. Fix the UI (Re-render the now empty cart & reset the navbar badge icon)
-        renderCart();
-        updateCartBadge();
+            // 4. Clear the local checkout cart since the database transaction succeeded
+            localStorage.removeItem('SAMI_CART'); 
+            renderCart();
+            updateCartBadge();
 
-        alert('Payment successful! Licenses added to your account.');
+            alert('Payment successful! Licenses permanently added to your cloud account.');
+            window.location.href = 'profile.html';
 
-        // 7. Redirect the user to the profile page
-        window.location.href = 'profile.html';
+        } catch (error) {
+            console.error("Database write error during checkout:", error);
+            alert("Payment failed while contacting account database. Please try again.");
+        }
     });
 }
 
