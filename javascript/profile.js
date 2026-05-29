@@ -24,7 +24,13 @@ onAuthStateChanged(auth, async (user) => {
                 document.getElementById('profile-fullname').innerText = `${firstName} ${lastName}`;
                 document.getElementById('profile-email').innerText = user.email;
                 document.getElementById('profile-birthday').innerText = tutorData.birthday || "Not set";
-                document.getElementById('profile-license').innerText = tutorData.license || "None";
+                const ownedLicensesArray = JSON.parse(localStorage.getItem('SAMI_OWNED_LICENSES')) || [];
+
+                // 2. Count the elements in the array to get the active total
+                const licenseCount = ownedLicensesArray.length;
+
+                // 3. Print the number dynamically into your info card node
+                document.getElementById('profile-license').innerText = `${licenseCount} Active`;
                 
                 // Set avatar initials dynamically
                 const initials = (firstName.charAt(0) + lastName.charAt(0)).toUpperCase();
@@ -46,13 +52,39 @@ onAuthStateChanged(auth, async (user) => {
 });
 
 // Handle Account Sign Out Action
-logoutBtn.addEventListener('click', () => {
-    signOut(auth)
-        .then(() => {
-            alert("Logged out successfully!");
-            window.location.href = "login_register.html";
-        })
-        .catch((error) => {
-            console.error("Logout error:", error);
-        });
+if (logoutBtn) {
+    logoutBtn.addEventListener('click', () => {
+        signOut(auth)
+            .then(() => {
+                alert("Logged out successfully!");
+                window.location.href = "login_register.html";
+            })
+            .catch((error) => {
+                console.error("Logout error:", error);
+            });
+    });
+}
+
+// Render dynamic licenses from checkout
+document.addEventListener('DOMContentLoaded', () => {
+    // Target a container in your profile HTML where licenses should live
+    const licenseContainer = document.getElementById('owned-licenses-container'); 
+    
+    if (!licenseContainer) return;
+
+    // FIX: Changed 'ownedLicenses' to 'SAMI_OWNED_LICENSES' to match checkout.js!
+    const ownedLicenses = JSON.parse(localStorage.getItem('SAMI_OWNED_LICENSES')) || [];
+
+    if (ownedLicenses.length === 0) {
+        licenseContainer.innerHTML = '<p class="empty-message" style="color: var(--text-main); opacity: 0.6; font-size: 0.95rem;">You haven\'t purchased any licenses yet.</p>';
+        return;
+    }
+
+    // Render each active license onto the profile page
+    licenseContainer.innerHTML = ownedLicenses.map(item => `
+        <div class="detail-row">
+            <label>${item.name}</label>
+            <span style="color: var(--accent-cyan); font-weight: 500;">Active License ✓</span>
+        </div>
+    `).join('');
 });

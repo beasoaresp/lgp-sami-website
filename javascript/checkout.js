@@ -75,22 +75,11 @@ if (clearBtn) {
     });
 }
 
+// Handle the checkout flow cleanly
 if (checkoutBtn) {
     checkoutBtn.addEventListener('click', () => {
-        alert('Redirecting to secure checkout gateway...');
-    });
-}
-
-// Make sure it renders once the DOM content is completely loaded
-document.addEventListener('DOMContentLoaded', renderCart);
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    const checkoutBtn = document.getElementById('checkout-btn');
-
-    checkoutBtn.addEventListener('click', () => {
-        // 1. Get the current cart items (Assuming you store them as an array in localStorage)
-        const currentCart = JSON.parse(localStorage.getItem('cartItems')) || [];
+        // 1. Pull from the CORRECT storage key: 'SAMI_CART'
+        const currentCart = JSON.parse(localStorage.getItem('SAMI_CART')) || [];
 
         if (currentCart.length === 0) {
             alert('Your cart is empty!');
@@ -98,22 +87,27 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // 2. Get existing owned licenses or initialize an empty array
-        const ownedLicenses = JSON.parse(localStorage.getItem('ownedLicenses')) || [];
+        const ownedLicenses = JSON.parse(localStorage.getItem('SAMI_OWNED_LICENSES')) || [];
 
         // 3. Merge the cart items into the owned licenses list
-        // (Using a Set or check to avoid duplicate purchases if necessary)
         const updatedLicenses = [...ownedLicenses, ...currentCart];
 
         // 4. Save the updated licenses back to localStorage
-        localStorage.setItem('ownedLicenses', JSON.stringify(updatedLicenses));
+        localStorage.setItem('SAMI_OWNED_LICENSES', JSON.stringify(updatedLicenses));
 
-        // 5. Clear the cart since they've now "purchased" them
-        localStorage.removeItem('cartItems'); 
-        // If your badge depends on this, you might want to trigger a badge update function here
+        // 5. Clear the actual cart key from storage
+        localStorage.removeItem('SAMI_CART'); 
+
+        // 6. Fix the UI (Re-render the now empty cart & reset the navbar badge icon)
+        renderCart();
+        updateCartBadge();
 
         alert('Payment successful! Licenses added to your account.');
 
-        // 6. Redirect the user to the account page
+        // 7. Redirect the user to the profile page
         window.location.href = 'profile.html';
     });
-});
+}
+
+// FIX: Run the function immediately when the script executes so items actually display!
+renderCart();
