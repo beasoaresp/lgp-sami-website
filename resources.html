@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/features.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/resources.css">
+    <link rel="stylesheet" href="css/profile.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
@@ -17,7 +18,9 @@
             <ul class="nav-links">
                 <li><a href="home_page.html">Home</a></li>
                 <li><a href="team.html">Team</a></li>
-                <li><a href="login_register.html">For Tutors</a></li>
+                <li class="show-logged-out"><a href="login_register.html">For Tutors</a></li>
+                <li class="show-logged-in"><a href="resources.html">Lessons</a></li>
+                <li class="show-logged-in"><a href="profile.html">Account</a></li>
             </ul>
             <div class="button-container">
                 <div class="button">Download App</div>
@@ -135,6 +138,7 @@
         </div>
     </footer>
 
+    <script type="module" src="javascript/navbar.js"></script>
     <script type="module" src="javascript/login.js"></script>
 
 </body>

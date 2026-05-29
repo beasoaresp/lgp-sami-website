@@ -41,6 +41,10 @@ body {
     letter-spacing: 2px;
 }
 
+.show-logged-in {
+    display: none !important;
+}
+
 .nav-links {
     list-style: none;
     display: flex;
