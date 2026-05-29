@@ -1,0 +1,101 @@
+:root {
+    --bg-dark: #1E1E1E;
+    --text-main: #F0EFEF;
+    --accent-cyan: #6DD4BE;
+    --accent-blue: #383ABD;
+    --deep-blue: #281697;
+}
+
+@font-face {
+    font-family: 'SamiFont'; 
+    src: url('typography/Garet-Book.ttf') format('truetype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+.content-wrapper {
+    padding-top: 200px;
+}
+
+.profile-card {
+    background-color: #262626;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    width: 90%;
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    font-family: 'SamiFont', sans-serif;
+}
+
+.avatar-circle {
+    width: 90px;
+    height: 90px;
+    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+    border-radius: 50%;
+    margin: 0 auto 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 8px 16px rgba(56, 58, 189, 0.3);
+}
+
+#avatar-initials {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #1E1E1E;
+    letter-spacing: 1px;
+}
+
+.profile-card h1 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+    color: var(--text-main);
+}
+
+.logout-badge {
+    display: inline-block;
+    background: transparent;
+    color: #DC554E;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    margin-bottom: 35px;
+    border: 1px solid rgba(220, 85, 78, 0.4);
+    font-weight: 500;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.3s ease;
+    margin: 10px;
+}
+
+.profile-details {
+    text-align: left;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 25px;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+}
+
+.detail-row label {
+    color: var(--text-main);
+    opacity: 0.6;
+    font-weight: 300;
+}
+
+.detail-row span {
+    color: var(--text-main);
+    font-weight: 400;
+}
+
+.logout-badge:hover {
+    background: rgba(220, 85, 78, 0.15);
+    color: #DC554E;
+}
