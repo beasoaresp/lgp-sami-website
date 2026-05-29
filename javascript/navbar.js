@@ -27,3 +27,14 @@ if (logoutBtn) {
         });
     });
 }
+
+export function updateCartBadge() {
+    const cartBadge = document.getElementById('cartBadge');
+    if (cartBadge) {
+        const cart = JSON.parse(localStorage.getItem('SAMI_CART')) || [];
+        cartBadge.textContent = cart.length;
+    }
+}
+
+// Automatically update on page load for whichever page includes navbar.js
+document.addEventListener('DOMContentLoaded', updateCartBadge);

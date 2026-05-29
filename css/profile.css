@@ -99,3 +99,10 @@
     background: rgba(220, 85, 78, 0.15);
     color: #DC554E;
 }
+
+.cart-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 25px;
+}
