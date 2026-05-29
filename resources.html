@@ -40,8 +40,10 @@
 
     <main class="content-wrapper">
         <div class="resources">
-            <h1>Lessons</h1>
-            <div class="lessons-container">
+            
+            <h1 id="resources-title">Lessons</h1>
+            
+            <div id="lessons-display-container" class="lessons-container" style="display: none;">
                 <div class="lesson-card1">
                     <div class="card-header">
                         <h2 class="card-title">Lesson 1</h2>
@@ -138,8 +140,19 @@
                     </div>
                 </div>
             </div>
+
+            <div id="no-license-message" class="profile-card" style="display: none; margin: 40px auto;">
+                <i class="fa fa-lock" style="font-size: 3.5rem; color: #DC554E; margin-bottom: 20px;"></i>
+                <h2 style="color: var(--text-main); margin-bottom: 10px; font-size: 1.6rem;">Access Restricted</h2>
+                <p style="color: var(--text-main); opacity: 0.6; margin-bottom: 30px; font-weight: 300; line-height: 1.5;">
+                    You do not have an active license to view these materials. Please purchase a license to unlock access.
+                </p>
+                <button onclick="window.location.href='home_page.html';" class="button logout-badge" style="border-color: var(--accent-cyan); color: var(--accent-cyan); padding: 10px 25px;">
+                    Browse Licenses
+                </button>
+            </div>
+
         </div>
-        
     </main>
     
     <footer class="sami-footer">
@@ -148,8 +161,8 @@
         </div>
     </footer>
 
+    <script type="module" src="javascript/resources.js"></script>
     <script type="module" src="javascript/navbar.js"></script>
-    <script type="module" src="javascript/login.js"></script>
 
 </body>
 </html>
