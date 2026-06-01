@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>SAMI</title>
+    <link rel="stylesheet" href="css/home_page.css">
+    <link rel="stylesheet" href="css/features.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/resources.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">SAMI</div>
+        <div class="menu">
+            <ul class="nav-links">
+                <li><a href="home_page.html">Home</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li class="show-logged-out"><a href="login_register.html">For Tutors</a></li>
+                <li class="show-logged-in"><a href="resources.html">Lessons</a></li>
+                <li class="show-logged-in"><a href="profile.html">Account</a></li>
+            </ul>
+            <div class="icon_cart">
+                <button onclick = "window.location.href='cart.html';">
+                    <svg id="icon_cart" viewBox="0 0 24 24">
+                        <path d="M3 5H5L7 15H17L19 8H8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="9" cy="19" r="1.5" fill="currentColor"/>
+                        <circle cx="17" cy="19" r="1.5" fill="currentColor"/>
+                    </svg>
+                    <span class="cart-badge" id="cartBadge">0</span>
+                </button>    
+            </div>
+            <div class="button-container">
+                <div class="button">Download App</div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="content-wrapper">
+        <div class="resources">
+            
+            <h1 id="resources-title">Lessons</h1>
+            
+            <div id="lessons-display-container" class="lessons-container" style="display: none;">
+                <div class="lesson-card1">
+                    <div class="card-header">
+                        <h2 class="card-title">Lesson 1</h2>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="feature-preview"></div>
+
+                        <div class="info-grid">
+                            <div class="info-group">
+                                <div class="check_cross">
+                                    <p>Video tutorial</p>
+                                </div>
+                            </div>
+                            <div class="info-group secondary">
+                                <div class="feature-preview"></div>
+                                <div class="check_cross">
+                                    <p>Music sheets</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-card1">
+                    <div class="card-header">
+                        <h2 class="card-title">Lesson 2</h2>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="feature-preview"></div>
+
+                        <div class="info-grid">
+                            <div class="info-group">
+                                <div class="check_cross">
+                                    <p>Video tutorial</p>
+                                </div>
+                            </div>
+                            <div class="info-group secondary">
+                                <div class="feature-preview"></div>
+                                <div class="check_cross">
+                                    <p>Music sheets</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-card1">
+                    <div class="card-header">
+                        <h2 class="card-title">Lesson 3</h2>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="feature-preview"></div>
+
+                        <div class="info-grid">
+                            <div class="info-group">
+                                <div class="check_cross">
+                                    <p>Video tutorial</p>
+                                </div>
+                            </div>
+                            <div class="info-group secondary">
+                                <div class="feature-preview"></div>
+                                <div class="check_cross">
+                                    <p>Music sheets</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-card1">
+                    <div class="card-header">
+                        <h2 class="card-title">Lesson 4</h2>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="feature-preview"></div>
+
+                        <div class="info-grid">
+                            <div class="info-group">
+                                <div class="check_cross">
+                                    <p>Video tutorial</p>
+                                </div>
+                            </div>
+                            <div class="info-group secondary">
+                                <div class="feature-preview"></div>
+                                <div class="check_cross">
+                                    <p>Music sheets</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="no-license-message" class="profile-card" style="display: none; margin: 40px auto;">
+                <i class="fa fa-lock" style="font-size: 3.5rem; color: #DC554E; margin-bottom: 20px;"></i>
+                <h2 style="color: var(--text-main); margin-bottom: 10px; font-size: 1.6rem;">Access Restricted</h2>
+                <p style="color: var(--text-main); opacity: 0.6; margin-bottom: 30px; font-weight: 300; line-height: 1.5;">
+                    You do not have an active license to view these materials. Please purchase a license to unlock access.
+                </p>
+                <button onclick="window.location.href='home_page.html';" class="button logout-badge" style="border-color: var(--accent-cyan); color: var(--accent-cyan); padding: 10px 25px;">
+                    Browse Licenses
+                </button>
+            </div>
+
+        </div>
+    </main>
+    
+    <footer class="sami-footer">
+        <div class="footer-content">
+            <p class="copyright">2026 SAMI. All rights reserved</p>
+        </div>
+    </footer>
+
+    <script type="module" src="javascript/resources.js"></script>
+    <script type="module" src="javascript/navbar.js"></script>
+
+</body>
+</html>

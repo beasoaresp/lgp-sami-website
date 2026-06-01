@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/licenses.css">
     <link rel="stylesheet" href="css/contact.css">
     <link rel="stylesheet" href="css/footer.css">
-    <script src="sami_Canvas.js" defer></script>
+    <script src="javascript/sami_Canvas.js" defer></script>
 </head>
 <body>
     
@@ -21,8 +21,20 @@
                 <ul class="nav-links">
                     <li><a href="home_page.html">Home</a></li>
                     <li><a href="team.html">Team</a></li>
-                    <li><a href="login_register.html">For Tutors</a></li>
+                    <li class="show-logged-out"><a href="login_register.html">For Tutors</a></li>
+                    <li class="show-logged-in"><a href="resources.html">Lessons</a></li>
+                    <li class="show-logged-in"><a href="profile.html">Account</a></li>
                 </ul>
+                <div class="icon_cart">
+                    <button onclick = "window.location.href='cart.html';">
+                        <svg id="icon_cart" viewBox="0 0 24 24">
+                            <path d="M3 5H5L7 15H17L19 8H8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="9" cy="19" r="1.5" fill="currentColor"/>
+                            <circle cx="17" cy="19" r="1.5" fill="currentColor"/>
+                        </svg>
+                        <span class="cart-badge" id="cartBadge">0</span>
+                    </button>    
+                </div>
                 <div class="button-container">
                     <div class="button">Download App</div>
                 </div>
@@ -109,7 +121,7 @@
                     <div class="card-header">
                         <h2 class="card-title">Individual License</h2>
                         <div class="toggle-control">
-                            <span class="currency-badge">0</span>
+                            <span class="currency-badge" data-item="Individual License">Add to cart</span>
                             <span class="status-dot"></span>
                         </div>
                     </div>
@@ -160,7 +172,7 @@
                     <div class="card-header">
                         <h2 class="card-title">Institutional License</h2>
                         <div class="toggle-control">
-                            <span class="currency-badge">0</span>
+                            <span class="currency-badge" data-item="Institutional License">Add to cart</span>
                             <span class="status-dot"></span>
                         </div>
                     </div>
@@ -235,6 +247,8 @@
         </div>
     </footer>
 
+    <script type="module" src="javascript/navbar.js"></script>
+    <script type="module" src="javascript/home_cart.js"></script>
 
 </body>
 </html>

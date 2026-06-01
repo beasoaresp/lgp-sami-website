@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
 </head>
+
 <body>
 
     <nav class="navbar">
@@ -20,8 +20,20 @@
             <ul class="nav-links">
                 <li><a href="home_page.html">Home</a></li>
                 <li><a href="team.html">Team</a></li>
-                <li><a href="login_register.html">For Tutors</a></li>
+                <li class="show-logged-out"><a href="login_register.html">For Tutors</a></li>
+                <li class="show-logged-in"><a href="resources.html">Lessons</a></li>
+                <li class="show-logged-in"><a href="profile.html">Account</a></li>
             </ul>
+            <div class="icon_cart">
+                <button onclick = "window.location.href='cart.html';">
+                    <svg id="icon_cart" viewBox="0 0 24 24">
+                        <path d="M3 5H5L7 15H17L19 8H8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="9" cy="19" r="1.5" fill="currentColor"/>
+                        <circle cx="17" cy="19" r="1.5" fill="currentColor"/>
+                    </svg>
+                    <span class="cart-badge" id="cartBadge">0</span>
+                </button>    
+            </div>
             <div class="button-container">
                 <div class="button">Download App</div>
             </div>
@@ -29,41 +41,34 @@
     </nav>
 
     <main class="content-wrapper-register">
- 
-        <!--<canvas id="samiCanvas"></canvas>-->
-            <div class="register-tutor-quare-register">  
-                <div class="register-content"> 
-                    <h1>Register Tutor</h1>
-                    <div class="form_inputs">
-                        <form  action="/action_page.php">
-                            <div class="login_register">
-                                <div class="personal-info">
-                                    <h3>Personal information</h3>
-                                    <input class="input-registe-tutors" placeholder="Frist Name" type="text" id="lfristname" name="lfristname"><br>
-                                    <input class="input-registe-tutors" placeholder="Last Name" type="text" id="llastname" name="llastname"><br>
-                                    <input class="input-registe-tutors" placeholder="Birthday" type="datetime" id="ldata" name="ldata"><br>
-                                </div>
-                                <div class="personal-info">
-                                    <h3>Account information</h3>
-                                    <input class="input-registe-tutors" placeholder="E-mail" type="text" id="fname" name="fname"><br>
-                                    <input class="input-registe-tutors" placeholder="Password" type="password" id="lpassword" name="lpassword"><br>
-                                    <input class="input-registe-tutors" placeholder="Confirm Password" type="password" id="lconfirmpassword" name="lconfirmpassword"><br>
-                                </div>
+        <div class="register-tutor-quare-register">  
+            <div class="register-content"> 
+                <h1>Register Tutor</h1>
+                <div class="form_inputs">
+                    <form id="register-form">
+                        <div class="login_register">
+                            <div class="personal-info">
+                                <h3>Personal information</h3>
+                                <input class="input-registe-tutors" placeholder="First Name" type="text" id="lfirstname" name="lfirstname" required><br>
+                                <input class="input-registe-tutors" placeholder="Last Name" type="text" id="llastname" name="llastname" required><br>
+                                <input class="input-registe-tutors" placeholder="Birthday" type="date" id="ldata" name="ldata" required><br>
                             </div>
-                            <div class="register-content"> 
-                                <div class="button-container">
-                                    <button type="submit" class="button">Login</button>
-                                </div>
+                            <div class="personal-info">
+                                <h3>Account information</h3>
+                                <input class="input-registe-tutors" placeholder="E-mail" type="email" id="lemail" name="lemail" required><br>
+                                <input class="input-registe-tutors" placeholder="Password" type="password" id="lpassword" name="lpassword" required><br>
+                                <input class="input-registe-tutors" placeholder="Confirm Password" type="password" id="lconfirmpassword" name="lconfirmpassword" required><br>
                             </div>
-                        </form>    
-                    </div>
-                    <div class="register">
-                        <p>Don't have an account?</p>
-                        <a href="login_register.html">Register</a>
-                    </div>
-                </div>  
-            </div>
-    
+                        </div>
+                        <div class="register-content"> 
+                            <div class="button-container">
+                                <button type="submit" class="button">Register</button>
+                            </div>
+                        </div>
+                    </form>    
+                </div>
+            </div>  
+        </div>
     </main>
     
     <footer class="sami-footer">
@@ -71,6 +76,9 @@
             <p class="copyright">2026 SAMI. All rights reserved</p>
         </div>
     </footer>
+
+    <script type="module" src="javascript/navbar.js"></script>
+    <script type="module" src="javascript/register.js"></script>
 
 </body>
 </html>
