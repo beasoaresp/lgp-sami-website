@@ -46,6 +46,44 @@ body {
 
 }
 
+.team-individual{
+    width: 260px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    align-items: center;
+    align-content: center;
+
+}
+
+.team-content{
+    
+    grid-template-columns: 1fr 2fr 1fr;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Cria 3 colunas iguais */
+    gap: 50px;
+    margin-left: 100px;
+    margin-right: 100px;
+
+}
+
+.group-photo-preview{
+    width: 1080px;
+    height: 566px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    align-items: center;
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .features-title-login {
     color: var(--accent-cyan);
     text-align: center;
@@ -101,6 +139,21 @@ body {
     justify-content: center;
     margin-bottom: 30px;
     margin-top: 30px;
+}
+
+.register-tutor-quare-register h3 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    margin-top: 50px;
+}
+
+.team-departments h1 {
+    display: flex;
+    justify-content: left;
+    
+    margin-top: 50px;
+    margin-left: 100px;
 }
 
 .form_inputs {
