@@ -36,5 +36,7 @@ export function updateCartBadge() {
     }
 }
 
+
+
 // Automatically update on page load for whichever page includes navbar.js
 document.addEventListener('DOMContentLoaded', updateCartBadge);

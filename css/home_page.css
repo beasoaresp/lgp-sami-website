@@ -103,7 +103,7 @@ body {
     position: absolute;
     top: -5px;
     right: -5px;
-    background-color: var(--deep-blue); /* Eye-catching red/pink notification color */
+    background-color: var(--deep-blue); 
     color: var(--text-main);
     font-size: 0.75rem;
     font-weight: bold;
@@ -231,9 +231,53 @@ body {
     object-fit: cover;
 }
 
-/* Desktop View: Split into two columns */
 @media (min-width: 992px) {
     .brand-container {
         grid-template-columns: 1.5fr 1fr;
     }
+}
+
+.feature-card {
+    
+    width: 320px;
+    height: 180px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.feature-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.feature-card.flipped .feature-card-inner {
+    transform: rotateY(180deg);
+}
+
+.feature-card-front,
+.feature-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+
+    border-radius: 12px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.feature-card-back {
+    background: #222;
+    transform: rotateY(180deg);
+    text-align: center;
 }
