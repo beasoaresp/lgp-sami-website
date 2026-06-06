@@ -22,7 +22,7 @@ body {
 }
 
 .navbar {
-    position: relative;        /* Changed from absolute so it pushes content down */
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
@@ -176,7 +176,7 @@ body {
     justify-content: flex-start;
     align-items: center;
 
-    position: sticky;
+    position: relative;
     top: 0;
     z-index: 1;
 
@@ -229,44 +229,42 @@ body {
     padding: 0;
 }
 
-/* The Acronym: Styled like a premium, anchored sub-header */
+
 .brand-info .acronym h1 {
-    font-size: 0.95rem;          /* Crisp and intentional size */
+    font-size: 0.95rem;
     line-height: 1.2;
-    font-weight: 700;            /* Bold enough to stand as a clean anchor */
-    text-transform: uppercase;   /* Instantly adds structural professionalism */
-    letter-spacing: 2px;         /* Gives an elegant, spaced-out layout look */
-    margin: 0 0 10px 0;          /* Clean bottom margin pushing to the slogan */
-    color: var(--accent-cyan);   /* Uses your accent color to instantly tie it to the brand */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0 0 10px 0;
+    color: var(--accent-cyan);
 }
 
-/* The Slogan: Ultra-bold, packed, and dominant */
 .brand-info .slogan {
     font-size: 5.5rem;           
-    font-weight: 1000;            /* Forced to maximum weight to eliminate the "thin" look */
-    line-height: 0.95;           /* Tighter line height so the large font looks cohesive */
-    letter-spacing: -1px;        /* Pulls large letters closer together for a high-end look */
-    margin: 0 0 35px 0;          /* Strict bottom margin pushing to the body text */
+    font-weight: 1000;
+    line-height: 0.95;
+    letter-spacing: -1px;
+    margin: 0 0 35px 0;
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     
-    /* Gradiente block from image_e2c25e.png */
     background: radial-gradient(circle at center, #6dd4be 0%, #86b9f5 60%, #383abd 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     
-    display: block;              /* Changed to block to ensure it occupies its own solid row */
+    display: block;
 }
 
-/* The Main Text Block: Professional editorial alignment */
+
 .brand-info .text {
     font-size: 1.05rem;
     line-height: 1.65;
     color: var(--text-main);
-    max-width: 800px;            /* Slightly narrowed width to avoid long, floating text lines */
-    opacity: 0.85;               /* Soft contrast distinction from the main headings */
+    max-width: 800px;
+    opacity: 0.85;
     margin: 0;
 }
 
@@ -274,18 +272,17 @@ body {
     width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;        /* Centra a imagem verticalmente caso a coluna do texto seja mais alta */
-    overflow: visible;          /* Mudado de hidden para visible para não cortar sombras ou detalhes da imagem */
+    align-items: center;
+    overflow: visible;
 }
 
 .mockup-image img {
     width: 100%;
-    max-width: 550px;           /* FIX: Limita a largura máxima para o telemóvel não ficar gigante */
-    height: auto;               /* Mantém a proporção perfeita do mockup */
-    max-height: 70vh;           /* FIX: Garante que a imagem nunca ultrapassa 70% da altura do monitor */
-    object-fit: contain;        /* Mudado de cover para contain para garantir que o telemóvel nunca é cortado */
+    max-width: 550px;
+    height: auto;
+    max-height: 70vh;
+    object-fit: contain;
     
-    /* Opcional: Adiciona uma sombra profissional para condizer com o estilo premium */
     filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.6));
 }
 

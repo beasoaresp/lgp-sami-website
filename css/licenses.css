@@ -16,7 +16,7 @@
 /**/
 
 .licenses-section-container {
-    max-width: 1500px;
+    max-width: 1800px;
     margin: 80px auto 40px;
     padding: 0 20px;
     width: 100%;
@@ -144,8 +144,7 @@
     margin-bottom: 25px;
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    
-    /* Flexbox para centrar perfeitamente o preço lá dentro */
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -160,7 +159,7 @@
     letter-spacing: 0.5px;
 }
 
-/* Garante o destaque extra em Bold solicitado para o valor numérico */
+
 .price-display-box p strong {
     font-weight: 800;
     font-size: 1.4rem;
@@ -214,13 +213,13 @@
 
 .check_cross {
     display: flex;
-    align-items: center;        /* Alinha verticalmente o ícone ao centro com o texto */
-    gap: 12px;                  /* Cria um espaço uniforme entre o ícone e o texto */
-    margin-bottom: 14px;        /* Espaçamento limpo entre cada linha de funcionalidade */
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
 }
 
 .check_cross p {
-    margin: 0;                  /* Remove margens padrão que desalinham o bloco */
+    margin: 0;
     font-size: 1.05rem;
     font-weight: 300;
     opacity: 0.9;
@@ -228,9 +227,9 @@
 }
 
 .trial-note {
-    margin-top: 30px;               /* Empurra a nota para o fim do cartão */
+    margin-top: 30px;
     padding-top: 15px;
-    border-top: 1px solid rgba(255, 255, 255, 0.05); /* Linha divisória subtil */
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
     text-align: center;
 }
 
@@ -238,20 +237,19 @@
     margin: 0;
     font-size: 0.9rem;
     font-weight: 400;
-    color: var(--accent-cyan);      /* Destaca a oferta usando a tua cor cyan */
+    color: var(--accent-cyan);
     opacity: 0.9;
     letter-spacing: 0.5px;
 }
 
 
 .institutional-three-grid {
-    grid-template-columns: 1fr 1fr 1fr !important; /* Força 3 colunas idênticas lado a lado */
-    gap: 20px !important;                          /* Reduz ligeiramente o espaço entre eles para caberem melhor */
+    grid-template-columns: 1fr 1fr 1fr !important;
+    gap: 20px !important;
     width: 100%;
 }
 
-/* Ajuste inteligente: Quando a aba institucional estiver ativa, permitimos que o contentor 
-   se estenda até 1150px para dar um espaço confortável aos 3 cartões */
+
 #institutional-content .licenses-container {
     max-width: 1150px;
     margin: 0 auto;
