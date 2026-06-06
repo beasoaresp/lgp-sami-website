@@ -1,3 +1,20 @@
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Alvos a animar
+    const acronym = document.querySelector(".brand-info .acronym");
+    const slogan = document.querySelector(".brand-info .slogan");
+    const text = document.querySelector(".brand-info .text");
+    const image = document.querySelector(".mockup-image");
+
+    // Injeta a classe de visibilidade com um micro-atraso para o browser processar o estilo inicial
+    setTimeout(() => {
+        if (acronym) acronym.classList.add("reveal-visible");
+        if (slogan) slogan.classList.add("reveal-visible");
+        if (text) text.classList.add("reveal-visible");
+        if (image) image.classList.add("reveal-visible");
+    }, 150);
+});
+
 const Members = document.querySelectorAll(".team-departments");
 
 const observerConfig = {

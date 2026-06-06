@@ -14,12 +14,16 @@
 }
 
 .contact-container {
+    margin-top: 120px;
     margin: 150px auto 0; /* Space above/below */
     padding: 0 150px;
     position: relative;
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+    box-sizing: border-box;
 }
 
 .contact-header {
+    margin-top: 70px;
     text-align: center;
     margin-bottom: 50px;
 }

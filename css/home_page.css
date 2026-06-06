@@ -160,6 +160,51 @@ body {
     opacity: 0.8;
 }
 
+/* ==========================================================================
+   ANIMAÇÃO DE ENTRADA (INTRO REVEAL)
+   ========================================================================== */
+
+/* Estado inicial oculto para os elementos de texto */
+.brand-info .acronym,
+.brand-info .slogan,
+.brand-info .text,
+.mockup-image {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), 
+                transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: opacity, transform;
+}
+
+/* Estado ativo injetado pelo JavaScript */
+.brand-info .acronym.reveal-visible,
+.brand-info .slogan.reveal-visible,
+.brand-info .text.reveal-visible,
+.mockup-image.reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Delays cirúrgicos para criar o efeito de cascata (um a seguir ao outro) */
+.brand-info .acronym.reveal-visible {
+    transition-delay: 0.1s;
+}
+
+.brand-info .slogan.reveal-visible {
+    transition-delay: 0.25s;
+}
+
+.brand-info .text.reveal-visible {
+    opacity: 0.85;
+    transform: translateY(0);
+}
+
+/* A imagem surge do lado direito com um embalo elegante */
+.mockup-image.reveal-visible {
+    transition-delay: 0.55s;
+    transform: translateY(0) scale(1);
+}
+
 
 #samiCanvas {
     margin-top: 0;
@@ -264,7 +309,6 @@ body {
     line-height: 1.65;
     color: var(--text-main);
     max-width: 800px;
-    opacity: 0.85;
     margin: 0;
 }
 
