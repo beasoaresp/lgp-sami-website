@@ -10,58 +10,59 @@
     <script src="javascript/sami_Canvas.js" defer></script>
 </head>
 <body>
-    
+
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/logoAsset.png" alt="SAMI Logo">
+        </div>
+        <div class="menu">
+            <ul class="nav-links">
+                <li><a href="home_page.html">Home</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li class="show-logged-out"><a href="login_register.html">For Tutors</a></li>
+                <li class="show-logged-in"><a href="resources.html">Lessons</a></li>
+                <li class="show-logged-in"><a href="profile.html">Account</a></li>
+            </ul>
+            <div class="icon_cart">
+                <button onclick = "window.location.href='cart.html';">
+                    <svg id="icon_cart" viewBox="0 0 24 24">
+                        <path d="M3 5H5L7 15H17L19 8H8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="9" cy="19" r="1.5" fill="currentColor"/>
+                        <circle cx="17" cy="19" r="1.5" fill="currentColor"/>
+                    </svg>
+                    <span class="cart-badge" id="cartBadge">0</span>
+                </button>    
+            </div>
+            <div class="button-container">
+                <div class="button">Download App</div>
+            </div>
+        </div>
+    </nav>
+
     <canvas id="samiCanvas"></canvas>
 
     <header class="intro-section">
 
-        <nav class="navbar">
-            <div class="logo">SAMI</div>
-            <div class="menu">
-                <ul class="nav-links">
-                    <li><a href="home_page.html">Home</a></li>
-                    <li><a href="team.html">Team</a></li>
-                    <li class="show-logged-out"><a href="login_register.html">For Tutors</a></li>
-                    <li class="show-logged-in"><a href="resources.html">Lessons</a></li>
-                    <li class="show-logged-in"><a href="profile.html">Account</a></li>
-                </ul>
-                <div class="icon_cart">
-                    <button onclick = "window.location.href='cart.html';">
-                        <svg id="icon_cart" viewBox="0 0 24 24">
-                            <path d="M3 5H5L7 15H17L19 8H8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <circle cx="9" cy="19" r="1.5" fill="currentColor"/>
-                            <circle cx="17" cy="19" r="1.5" fill="currentColor"/>
-                        </svg>
-                        <span class="cart-badge" id="cartBadge">0</span>
-                    </button>    
-                </div>
-                <div class="button-container">
-                    <div class="button">Download App</div>
-                </div>
-            </div>
-        </nav>
-
         <div class="brand-container">
-        <!-- Left Column: Brand Info -->
+     
         <div class="brand-info">
             <div class="acronym"> 
                 <h1>Smart Accessible Musical Instrument</h1> 
             </div>
 
             <div class="slogan"> 
-                Control Music with your Gaze, Movement and Expressions 
+                The power to play, your way
             </div>
 
             <div class="text">
-                SAMI (Smart Accessible Musical Instrument) is an application designed to empower individuals with neuromuscular diseases to compose music accessibly. 
-                Our goal is to foster artistic expression and autonomy through technology. We are a team of thirteen Master’s students from the University of Porto, developed within the 
-                "Project Management Laboratory" course. 
+                An application designed to empower individuals with neuromuscular diseases to compose music accessibly. 
+                Our goal is to foster artistic expression and autonomy through technology. 
             </div>
         </div>
 
         <!-- Right Column: Image -->
         <div class="mockup-image">
-            <img src="images/phone-mockup.png" alt="SAMI App Mockup">
+            <img src="images/app_horizontal.png" alt="SAMI App Mockup">
         </div>
     </div>
     </header>
@@ -136,7 +137,7 @@
                             </div>
 
                             <div class="feature-card-back">
-                                <p>Constrols Loudness</p>
+                                <p>Controls Loudness</p>
                             </div>
 
                         </div>
@@ -151,97 +152,197 @@
             </div>
         </div>
 
-        <div class="licenses-container">
-            <div class="features-title">
-                <h1>Licenses</h1>
+        <div class="licenses-section-container">
+            <div class="license-toggle-tabs">
+                <button class="tab-btn active" data-target="individual-content">Individual Licenses</button>
+                <button class="tab-btn" data-target="institutional-content">Institutional Licenses</button>
             </div>
-            <div class="license-cards-container">
-                <div class="license-card1">
-                    <div class="card-header">
-                        <h2 class="card-title">Individual License</h2>
-                        <div class="toggle-control">
-                            <span class="currency-badge" data-item="Individual License">Add to cart</span>
-                            <span class="status-dot"></span>
+
+            <div id="individual-content" class="license-tab-content active">
+                <div class="license-cards-container">
+                    <div class="license-card1">
+                        <div class="card-header">
+                            <h2 class="card-title">Standard</h2>
+                            <div class="toggle-control">
+                                <span class="currency-badge" data-item="Individual License">Add to cart</span>
+                                <span class="status-dot"></span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="feature-preview">
+                                <p><strong>9,99€</strong> per month</p>
+                            </div>
+                            <div class="info-grid">
+                                <div class="info-group">
+                                    <div class="check_cross">
+                                        <svg class="icon check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                                        <p>App Access</p>
+                                    </div>
+                                    <div class="check_cross">
+                                        <svg class="icon check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                                        <p>Software Updates</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="card-body">
-                        <div class="feature-preview"></div>
-
-                        <div class="info-grid">
-                            <div class="info-group">
-                                <div class="check_cross">
-                                    <svg class="icon check" viewBox="0 0 24 24">
-                                        <path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2"/>
-                                    </svg>
-                                    <p>Buy the app</p>
-                                </div>
-                                <div class="check_cross">
-                                    <svg class="icon check" viewBox="0 0 24 24">
-                                        <path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2"/>
-                                    </svg>
-                                    <p>One payment only</p>
-                                </div>
-                                <div class="check_cross">
-                                    <svg class="icon check" viewBox="0 0 24 24">
-                                        <path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2"/>
-                                    </svg>
-                                    <p>Updates for the first year</p>
-                                </div>
+                    <div class="license-card1">
+                        <div class="card-header">
+                            <h2 class="card-title">Premium</h2>
+                            <div class="toggle-control">
+                                <span class="currency-badge" data-item="Individual License">Add to cart</span>
+                                <span class="status-dot"></span>
                             </div>
-                            <div class="info-group secondary">
-                                <div class="check_cross">
-                                    <svg class="icon cross" viewBox="0 0 24 24">
-                                        <path d="M6 6l12 12M6 18L18 6" fill="none" stroke="currentColor" stroke-width="2"/>
-                                    </svg>
-                                    <p>No hardware</p>
-                                </div>
-                                <div class="check_cross">
-                                    <svg class="icon cross" viewBox="0 0 24 24">
-                                        <path d="M6 6l12 12M6 18L18 6" fill="none" stroke="currentColor" stroke-width="2"/>
-                                    </svg>
-                                    <p>No premium customer support</p>
+                        </div>
+                        <div class="card-body">
+                            <div class="feature-preview">
+                                <p><strong>14,99€</strong> per month</p>
+                            </div>
+                            <div class="info-grid">
+                                <div class="info-group">
+                                    <div class="check_cross">
+                                        <svg class="icon check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                                        <p>App Access</p>
+                                    </div>
+                                    <div class="check_cross">
+                                        <svg class="icon check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                                        <p>Software Updates</p>
+                                    </div>
+                                    <div class="check_cross">
+                                        <svg class="icon check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                                        <p>Premium Customer Support</p>
+                                    </div>
+                                    <div class="check_cross">
+                                        <svg class="icon check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                                        <p>Web Portal Access</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="license-card2">
-                    <div class="card-header">
-                        <h2 class="card-title">Institutional License</h2>
-                        <div class="toggle-control">
-                            <span class="currency-badge" data-item="Institutional License">Add to cart</span>
-                            <span class="status-dot"></span>
+            </div> 
+            
+            <div id="institutional-content" class="license-tab-content">
+                <div class="license-cards-container institutional-three-grid">
+                    <div class="license-card1">
+                        <div class="card-header">
+                            <h2 class="card-title">1-10 Users</h2>
+                            <div class="toggle-control">
+                                <span class="currency-badge" data-item="Institutional License">Add to cart</span>
+                                <span class="status-dot"></span>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="card-body">
-                        <div class="feature-preview"></div>
-
-                        <div class="info-grid">
-                            <div class="info-group">
-                                <div class="check_cross">
-                                    <svg class="icon check" viewBox="0 0 24 24">
-                                        <path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2"/>
-                                    </svg>
-                                    <p>Annual subscription</p>
-                                </div>
-                                <div class="check_cross">
-                                    <svg class="icon check" viewBox="0 0 24 24">
-                                        <path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2"/>
-                                    </svg>
-                                    <p>Price varies based on the amount of devices/accounts</p>
-                                </div>
-                                <div class="check_cross">
-                                    <svg class="icon check" viewBox="0 0 24 24">
-                                        <path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2"/>
-                                    </svg>
-                                    <p>Includes tablets/smartphones with pre-installed software and hardware mounts</p>
+                        <div class="card-body">
+                            <div class="feature-preview price-display-box">
+                                <p><strong>575,50€</strong> per year</p>
+                            </div>
+                            <div class="info-grid">
+                                <div class="info-group">
+                                    <div class="check_cross">
+                                        <svg class="icon check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                                        <p>App Access</p>
+                                    </div>
+                                    <div class="check_cross">
+                                        <svg class="icon check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                                        <p>Software Updates</p>
+                                    </div>
+                                    <div class="check_cross">
+                                        <svg class="icon check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                                        <p>Premium Customer Support</p>
+                                    </div>
+                                    <div class="check_cross">
+                                        <svg class="icon check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                                        <p>Web Portal Access</p>
+                                    </div>
+                                    <div class="check_cross">
+                                        <svg class="icon check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                                        <p>Member Management Tool</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                     <div class="license-card1">
+                        <div class="card-header">
+                            <h2 class="card-title">11-30 Users</h2>
+                            <div class="toggle-control">
+                                <span class="currency-badge" data-item="Institutional License">Add to cart</span>
+                                <span class="status-dot"></span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="feature-preview price-display-box">
+                                 <p><strong>748,20€</strong> per year</p>
+                            </div>
+                            <div class="info-grid">
+                                <div class="info-group">
+                                 <div class="check_cross">
+                                    <svg class="icon check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                                    <p>App Access</p>
+                                </div>
+                                <div class="check_cross">
+                                    <svg class="icon check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                                    <p>Software Updates</p>
+                                </div>
+                                <div class="check_cross">
+                                    <svg class="icon check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                                    <p>Premium Customer Support</p>
+                                </div>
+                                <div class="check_cross">
+                                    <svg class="icon check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                                    <p>Web Portal Access</p>
+                                </div>
+                                <div class="check_cross">
+                                    <svg class="icon check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                                    <p>Member Management Tool</p>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                     <div class="license-card1">
+                        <div class="card-header">
+                            <h2 class="card-title">+31 Users</h2>
+                            <div class="toggle-control">
+                                <span class="currency-badge" data-item="Institutional License">Add to cart</span>
+                                <span class="status-dot"></span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="feature-preview price-display-box">
+                                <p><strong>1458,99€</strong> per year</p>
+                            </div>
+                            <div class="info-grid">
+                                <div class="info-group">
+                                    <div class="check_cross">
+                                        <svg class="icon check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                                        <p>App Access</p>
+                                    </div>
+                                    <div class="check_cross">
+                                        <svg class="icon check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                                        <p>Software Updates</p>
+                                    </div>
+                                    <div class="check_cross">
+                                        <svg class="icon check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                                        <p>Premium Customer Support</p>
+                                    </div>
+                                    <div class="check_cross">
+                                        <svg class="icon check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                                        <p>Web Portal Access</p>
+                                    </div>
+                                    <div class="check_cross">
+                                        <svg class="icon check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                                        <p>Member Management Tool</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>

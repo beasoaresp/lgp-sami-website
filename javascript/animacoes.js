@@ -31,7 +31,34 @@ Members.forEach(card => {
 
 
 document.querySelectorAll(".feature-card").forEach(card => {
-    card.addEventListener("click", () => {
-        card.classList.toggle("flipped");
+    card.addEventListener("mouseenter", () => {
+        card.classList.add("flipped");
+    });
+
+    card.addEventListener("mouseleave", () => {
+        card.classList.remove("flipped");
+    });
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const tabs = document.querySelectorAll(".tab-btn");
+    const contents = document.querySelectorAll(".license-tab-content");
+
+    tabs.forEach(tab => {
+        tab.addEventListener("click", () => {
+            // 1. Remove a classe activa de todos os botões
+            tabs.forEach(btn => btn.classList.remove("active"));
+            
+            // 2. Esconde todos os blocos de conteúdo
+            contents.forEach(content => content.classList.remove("active"));
+
+            // 3. Ativa o botão atual
+            tab.classList.add("active");
+
+            // 4. Mostra o conteúdo correspondente baseado no atributo data-target
+            const targetId = tab.getAttribute("data-target");
+            document.getElementById(targetId).classList.add("active");
+        });
     });
 });
