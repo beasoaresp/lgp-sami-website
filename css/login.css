@@ -29,33 +29,28 @@ body {
 }
 
 .personal-info {
+ 
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.team-individual{
-    width: 260px;
-    height: 300px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    align-items: center;
-    align-content: center;
-
+.team-individual {
+    width: 200px;
+    height: 200px;
+    clip-path: circle(50% at center);
+    display: block;          /* evita espaço extra por baixo das imagens */
+    margin: 0 auto;          /* centra a imagem dentro do div */
 }
 
-.team-content{
-    
-    grid-template-columns: 1fr 2fr 1fr;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); 
-    gap: 50px;
-    margin-left: 100px;
-    margin-right: 100px;
 
+.team-content {
+    
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+    justify-content: center; /* centra os membros horizontalmente */
+    flex-wrap: wrap;         /* evita overflow em ecrãs pequenos */
 }
 
 .group-photo-preview{
@@ -95,7 +90,7 @@ body {
 }
 
 .register-content {
-    margin-top: 100px;
+    margin-top: -50px;
     color: white; text-align: center; margin-left: 50px; margin-right: 50px;
 }
 
@@ -147,13 +142,23 @@ body {
     transform: translateY(0);
 }
 
-.team-departments h1 {
-    display: flex;
-    justify-content: left;
-    
-    margin-top: 50px;
-    margin-left: 100px;
 
+
+.team-content div {
+    text-align: center;
+    margin-bottom: 70px;
+    background-color: rgba(0, 0, 0, 0.1); 
+    border-radius: 10px;        
+    padding: 20px;              
+    width: 200px;               
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.704); 
+}
+
+.team-departments {
+    margin-top: 30px;
+    display: flex;           
+    flex-direction: column;  
+    align-items: center;     
 }
 
 .form_inputs {
@@ -196,8 +201,12 @@ body {
 }
 
 
-form input, form .button-container {
+form input, form  {
     margin-top: 30px;
+}
+
+.button-container-register {
+    margin-top: 100px;
 }
 
 input::placeholder {

@@ -169,6 +169,7 @@ body {
 .brand-info .slogan,
 .brand-info .text,
 .mockup-image {
+    margin-top: -100px;
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), 
