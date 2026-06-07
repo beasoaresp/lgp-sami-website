@@ -10,238 +10,335 @@
     <script src="javascript/sami_Canvas.js" defer></script>
 </head>
 <body>
-    
+
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/logoAsset.png" alt="SAMI Logo">
+        </div>
+        <div class="menu">
+            <ul class="nav-links">
+                <li><a href="home_page.html">Home</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li class="show-logged-out"><a href="login_register.html">For Tutors</a></li>
+                <li class="show-logged-in"><a href="resources.html">Lessons</a></li>
+                <li class="show-logged-in"><a href="profile.html">Account</a></li>
+            </ul>
+            <div class="icon_cart">
+                <button onclick = "window.location.href='cart.html';">
+                    <svg id="icon_cart" viewBox="0 0 24 24">
+                        <path d="M3 5H5L7 15H17L19 8H8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="9" cy="19" r="1.5" fill="currentColor"/>
+                        <circle cx="17" cy="19" r="1.5" fill="currentColor"/>
+                    </svg>
+                    <span class="cart-badge" id="cartBadge">0</span>
+                </button>    
+            </div>
+            <div class="button-container">
+                <div class="button">Download App</div>
+            </div>
+        </div>
+    </nav>
+
     <canvas id="samiCanvas"></canvas>
 
     <header class="intro-section">
 
-        <nav class="navbar">
-            <div class="logo">SAMI</div>
-            <div class="menu">
-                <ul class="nav-links">
-                    <li><a href="home_page.html">Home</a></li>
-                    <li><a href="team.html">Team</a></li>
-                    <li class="show-logged-out"><a href="login_register.html">For Tutors</a></li>
-                    <li class="show-logged-in"><a href="resources.html">Lessons</a></li>
-                    <li class="show-logged-in"><a href="profile.html">Account</a></li>
-                </ul>
-                <div class="icon_cart">
-                    <button onclick = "window.location.href='cart.html';">
-                        <svg id="icon_cart" viewBox="0 0 24 24">
-                            <path d="M3 5H5L7 15H17L19 8H8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <circle cx="9" cy="19" r="1.5" fill="currentColor"/>
-                            <circle cx="17" cy="19" r="1.5" fill="currentColor"/>
-                        </svg>
-                        <span class="cart-badge" id="cartBadge">0</span>
-                    </button>    
-                </div>
-                <div class="button-container">
-                    <div class="button">Download App</div>
-                </div>
-            </div>
-        </nav>
-
         <div class="brand-container">
-        <!-- Left Column: Brand Info -->
+     
         <div class="brand-info">
             <div class="acronym"> 
                 <h1>Smart Accessible Musical Instrument</h1> 
             </div>
 
             <div class="slogan"> 
-                Control Music with your Gaze, Movement and Expressions 
+                The power to play, your way
             </div>
 
             <div class="text">
-                SAMI (Smart Accessible Musical Instrument) is an application designed to empower individuals with neuromuscular diseases to compose music accessibly. 
-                Our goal is to foster artistic expression and autonomy through technology. We are a team of thirteen Master’s students from the University of Porto, developed within the 
-                "Project Management Laboratory" course. 
+                An application designed to empower individuals with neuromuscular diseases to compose music accessibly. 
+                Our goal is to foster artistic expression and autonomy through technology. 
             </div>
         </div>
 
         <!-- Right Column: Image -->
         <div class="mockup-image">
-            <img src="images/phone-mockup.png" alt="SAMI App Mockup">
+            <img src="images/app_horizontal.png" alt="SAMI App Mockup">
         </div>
     </div>
     </header>
     
     <main class="content-wrapper">
         <div class="features-container">
+    
+    <div class="features">
+        <div class="feature-video-container">
+            <video controls loop muted playsinline class="feature-video-player">
+                <source src="videos/SAMI_Pitch_1m15s_FINAL.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="features-right-column">
+            
             <div class="features-title">
                 <h1>Features</h1>
             </div>
-            <div class="features">
-                <div class="tracking-features">
-                    <div class="feature-card">
-                        <div class="feature-card-inner">
 
-                            <div class="feature-card-front">
-                                <svg class="eye-feature-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 5C7.33333 5 3.38192 7.89883 1.5 12C3.38192 16.1012 7.33333 19 12 19C16.6667 19 20.6181 16.1012 22.5 12C20.6181 7.89883 16.6667 5 12 5ZM12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12C17 14.7614 14.7614 17 12 17ZM12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9Z" 
-                                    fill="currentColor"/>
-                                </svg>
-                                <h3 class="feature-title">Eye Tracking</h3>
-                            </div>
-
-                            <div class="feature-card-back">
-                                <p>Controls the notes played</p>
-                            </div>
-
-                        </div>
+        <div class="tracking-features">
+            <div class="feature-card">
+                <div class="feature-card-inner">
+                    <div class="feature-card-front">
+                        <svg class="eye-feature-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 5C7.33333 5 3.38192 7.89883 1.5 12C3.38192 16.1012 7.33333 19 12 19C16.6667 19 20.6181 16.1012 22.5 12C20.6181 7.89883 16.6667 5 12 5ZM12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12C17 14.7614 14.7614 17 12 17ZM12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9Z" fill="currentColor"/>
+                        </svg>
+                        <h3 class="feature-title">Eye Tracking</h3>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-card-inner">
-
-                            <div class="feature-card-front">
-                                <svg class="head-feature-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2C8.686 2 6 4.686 6 8c0 1.564.603 2.986 1.586 4.064.232.252.414.586.414.936v1.5C8 16.985 10.015 19 12.5 19h.5c2.485 0 4.5-2.015 4.5-4.5V13c0-.35.182-.684.414-.936C17.397 10.986 18 9.564 18 8c0-3.314-2.686-6-6-6zM9 22h6" 
-                                    fill="currentColor"/>
-                                </svg>
-                                <h3 class="feature-title">Head Movement</h3>
-                            </div>
-
-                            <div class="feature-card-back">
-                                <p>Controls the vibrato</p>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-card-inner">
-
-                            <div class="feature-card-front">
-                                <svg class="mouth-feature-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 19c-4.418 0-8-2.686-8-6 0-.552.448-1 1-1h14c.552 0 1 .448 1 1 0 3.314-3.582 6-8 6zm0-2c2.761 0 5-1.343 5-3H7c0 1.657 2.239 3 5 3z" 
-                                    fill="currentColor"/>
-                                </svg>
-                                <h3 class="feature-title">Mouth Tracking</h3>
-                            </div>
-
-                            <div class="feature-card-back">
-                                <p>Controls the pitch</p>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-card-inner">
-
-                            <div class="feature-card-front">
-                                <svg class="air-feature-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M13 3a1 1 0 0 0-1 1v2a1 1 0 1 0 2 0V4a1 1 0 0 0-1-1zm-4 4a1 1 0 0 0-1 1v12a1 1 0 1 0 2 0V8a1 1 0 0 0-1-1zm8 4a1 1 0 0 0-1 1v8a1 1 0 1 0 2 0v-8a1 1 0 0 0-1-1zm-12 4a1 1 0 0 0-1 1v4a1 1 0 1 0 2 0v-4a1 1 0 0 0-1-1z" 
-                                    fill="currentColor"/>
-                                </svg>
-                                <h3 class="feature-title">Air Capture through Microphone</h3>
-                            </div>
-
-                            <div class="feature-card-back">
-                                <p>Constrols Loudness</p>
-                            </div>
-
-                        </div>
+                    <div class="feature-card-back">
+                        <p>Controls the notes played</p>
                     </div>
                 </div>
-                <div class="download-app">
-                    <div class="mascot-container">
-                        <img src="images/mascot.png" alt="SAMI Mascot" class="mascot-img">
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-card-inner">
+                    <div class="feature-card-front">
+                        <svg class="head-feature-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C8.686 2 6 4.686 6 8c0 1.564.603 2.986 1.586 4.064.232.252.414.586.414.936v1.5C8 16.985 10.015 19 12.5 19h.5c2.485 0 4.5-2.015 4.5-4.5V13c0-.35.182-.684.414-.936C17.397 10.986 18 9.564 18 8c0-3.314-2.686-6-6-6zM9 22h6" fill="currentColor"/>
+                        </svg>
+                        <h3 class="feature-title">Head Movement</h3>
                     </div>
-                    
+                    <div class="feature-card-back">
+                        <p>Controls the vibrato</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-card-inner">
+                    <div class="feature-card-front">
+                        <svg class="mouth-feature-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 19c-4.418 0-8-2.686-8-6 0-.552.448-1 1-1h14c.552 0 1 .448 1 1 0 3.314-3.582 6-8 6zm0-2c2.761 0 5-1.343 5-3H7c0 1.657 2.239 3 5 3z" fill="currentColor"/>
+                        </svg>
+                        <h3 class="feature-title">Mouth Tracking</h3>
+                    </div>
+                    <div class="feature-card-back">
+                        <p>Controls the pitch</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-card-inner">
+                    <div class="feature-card-front">
+                        <svg class="air-feature-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13 3a1 1 0 0 0-1 1v2a1 1 0 1 0 2 0V4a1 1 0 0 0-1-1zm-4 4a1 1 0 0 0-1 1v12a1 1 0 1 0 2 0V8a1 1 0 0 0-1-1zm8 4a1 1 0 0 0-1 1v8a1 1 0 1 0 2 0v-8a1 1 0 0 0-1-1zm-12 4a1 1 0 0 0-1 1v4a1 1 0 1 0 2 0v-4a1 1 0 0 0-1-1z" fill="currentColor"/>
+                        </svg>
+                        <h3 class="feature-title">Air Capture through Microphone</h3>
+                    </div>
+                    <div class="feature-card-back">
+                        <p>Controls Loudness</p>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="licenses-container">
+    </div> </div>
+</div>
+
+
+        <div class="licenses-section-container">
             <div class="features-title">
                 <h1>Licenses</h1>
             </div>
-            <div class="license-cards-container">
-                <div class="license-card1">
-                    <div class="card-header">
-                        <h2 class="card-title">Individual License</h2>
-                        <div class="toggle-control">
-                            <span class="currency-badge" data-item="Individual License">Add to cart</span>
-                            <span class="status-dot"></span>
+            <div class="license-toggle-tabs">
+                <button class="tab-btn active" data-target="individual-content">Individual Licenses</button>
+                <button class="tab-btn" data-target="institutional-content">Institutional Licenses</button>
+            </div>
+
+            <div id="individual-content" class="license-tab-content active">
+                <div class="license-cards-container">
+                    <div class="license-card1">
+                        <div class="card-header">
+                            <h2 class="card-title">Standard</h2>
+                            <div class="toggle-control">
+                                <span class="currency-badge" data-item="Individual License">Add to cart</span>
+                                <span class="status-dot"></span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="feature-preview">
+                                <p><strong>9,99€</strong> per month</p>
+                            </div>
+                            <div class="info-grid">
+                                <div class="info-group">
+                                    <div class="check_cross">
+                                        <svg class="icon check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                                        <p>App Access</p>
+                                    </div>
+                                    <div class="check_cross">
+                                        <svg class="icon check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                                        <p>Software Updates</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="card-body">
-                        <div class="feature-preview"></div>
-
-                        <div class="info-grid">
-                            <div class="info-group">
-                                <div class="check_cross">
-                                    <svg class="icon check" viewBox="0 0 24 24">
-                                        <path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2"/>
-                                    </svg>
-                                    <p>Buy the app</p>
-                                </div>
-                                <div class="check_cross">
-                                    <svg class="icon check" viewBox="0 0 24 24">
-                                        <path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2"/>
-                                    </svg>
-                                    <p>One payment only</p>
-                                </div>
-                                <div class="check_cross">
-                                    <svg class="icon check" viewBox="0 0 24 24">
-                                        <path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2"/>
-                                    </svg>
-                                    <p>Updates for the first year</p>
-                                </div>
+                    <div class="license-card1">
+                        <div class="card-header">
+                            <h2 class="card-title">Premium</h2>
+                            <div class="toggle-control">
+                                <span class="currency-badge" data-item="Individual License">Add to cart</span>
+                                <span class="status-dot"></span>
                             </div>
-                            <div class="info-group secondary">
-                                <div class="check_cross">
-                                    <svg class="icon cross" viewBox="0 0 24 24">
-                                        <path d="M6 6l12 12M6 18L18 6" fill="none" stroke="currentColor" stroke-width="2"/>
-                                    </svg>
-                                    <p>No hardware</p>
-                                </div>
-                                <div class="check_cross">
-                                    <svg class="icon cross" viewBox="0 0 24 24">
-                                        <path d="M6 6l12 12M6 18L18 6" fill="none" stroke="currentColor" stroke-width="2"/>
-                                    </svg>
-                                    <p>No premium customer support</p>
+                        </div>
+                        <div class="card-body">
+                            <div class="feature-preview">
+                                <p><strong>14,99€</strong> per month</p>
+                            </div>
+                            <div class="info-grid">
+                                <div class="info-group">
+                                    <div class="check_cross">
+                                        <svg class="icon check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                                        <p>App Access</p>
+                                    </div>
+                                    <div class="check_cross">
+                                        <svg class="icon check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                                        <p>Software Updates</p>
+                                    </div>
+                                    <div class="check_cross">
+                                        <svg class="icon check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                                        <p>Premium Customer Support</p>
+                                    </div>
+                                    <div class="check_cross">
+                                        <svg class="icon check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                                        <p>Web Portal Access</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="license-card2">
-                    <div class="card-header">
-                        <h2 class="card-title">Institutional License</h2>
-                        <div class="toggle-control">
-                            <span class="currency-badge" data-item="Institutional License">Add to cart</span>
-                            <span class="status-dot"></span>
+            </div> 
+            
+            <div id="institutional-content" class="license-tab-content">
+                <div class="license-cards-container institutional-three-grid">
+                    <div class="license-card1">
+                        <div class="card-header">
+                            <h2 class="card-title">1-10 Users</h2>
+                            <div class="toggle-control">
+                                <span class="currency-badge" data-item="Institutional License">Add to cart</span>
+                                <span class="status-dot"></span>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="card-body">
-                        <div class="feature-preview"></div>
-
-                        <div class="info-grid">
-                            <div class="info-group">
-                                <div class="check_cross">
-                                    <svg class="icon check" viewBox="0 0 24 24">
-                                        <path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2"/>
-                                    </svg>
-                                    <p>Annual subscription</p>
-                                </div>
-                                <div class="check_cross">
-                                    <svg class="icon check" viewBox="0 0 24 24">
-                                        <path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2"/>
-                                    </svg>
-                                    <p>Price varies based on the amount of devices/accounts</p>
-                                </div>
-                                <div class="check_cross">
-                                    <svg class="icon check" viewBox="0 0 24 24">
-                                        <path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2"/>
-                                    </svg>
-                                    <p>Includes tablets/smartphones with pre-installed software and hardware mounts</p>
+                        <div class="card-body">
+                            <div class="feature-preview price-display-box">
+                                <p><strong>575,50€</strong> per year</p>
+                            </div>
+                            <div class="info-grid">
+                                <div class="info-group">
+                                    <div class="check_cross">
+                                        <svg class="icon check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                                        <p>App Access</p>
+                                    </div>
+                                    <div class="check_cross">
+                                        <svg class="icon check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                                        <p>Software Updates</p>
+                                    </div>
+                                    <div class="check_cross">
+                                        <svg class="icon check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                                        <p>Premium Customer Support</p>
+                                    </div>
+                                    <div class="check_cross">
+                                        <svg class="icon check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                                        <p>Web Portal Access</p>
+                                    </div>
+                                    <div class="check_cross">
+                                        <svg class="icon check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                                        <p>Member Management Tool</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                     <div class="license-card1">
+                        <div class="card-header">
+                            <h2 class="card-title">11-30 Users</h2>
+                            <div class="toggle-control">
+                                <span class="currency-badge" data-item="Institutional License">Add to cart</span>
+                                <span class="status-dot"></span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="feature-preview price-display-box">
+                                 <p><strong>748,20€</strong> per year</p>
+                            </div>
+                            <div class="info-grid">
+                                <div class="info-group">
+                                 <div class="check_cross">
+                                    <svg class="icon check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                                    <p>App Access</p>
+                                </div>
+                                <div class="check_cross">
+                                    <svg class="icon check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                                    <p>Software Updates</p>
+                                </div>
+                                <div class="check_cross">
+                                    <svg class="icon check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                                    <p>Premium Customer Support</p>
+                                </div>
+                                <div class="check_cross">
+                                    <svg class="icon check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                                    <p>Web Portal Access</p>
+                                </div>
+                                <div class="check_cross">
+                                    <svg class="icon check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                                    <p>Member Management Tool</p>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                     <div class="license-card1">
+                        <div class="card-header">
+                            <h2 class="card-title">+31 Users</h2>
+                            <div class="toggle-control">
+                                <span class="currency-badge" data-item="Institutional License">Add to cart</span>
+                                <span class="status-dot"></span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="feature-preview price-display-box">
+                                <p><strong>1458,99€</strong> per year</p>
+                            </div>
+                            <div class="info-grid">
+                                <div class="info-group">
+                                    <div class="check_cross">
+                                        <svg class="icon check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                                        <p>App Access</p>
+                                    </div>
+                                    <div class="check_cross">
+                                        <svg class="icon check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                                        <p>Software Updates</p>
+                                    </div>
+                                    <div class="check_cross">
+                                        <svg class="icon check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                                        <p>Premium Customer Support</p>
+                                    </div>
+                                    <div class="check_cross">
+                                        <svg class="icon check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                                        <p>Web Portal Access</p>
+                                    </div>
+                                    <div class="check_cross">
+                                        <svg class="icon check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                                        <p>Member Management Tool</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
