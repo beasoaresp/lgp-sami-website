@@ -2,7 +2,6 @@ import { samiAlert } from './alerts.js';
 import { auth } from './firebase_config.js';
 import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
-// Grab all elements for both states
 const loggedInElements = document.querySelectorAll('.show-logged-in');
 const loggedOutElements = document.querySelectorAll('.show-logged-out');
 const logoutBtn = document.getElementById('navbar-logout-btn');
@@ -19,7 +18,6 @@ onAuthStateChanged(auth, (user) => {
     }
 });
 
-// Optional: Handle navbar logout button click if it exists on the page
 if (logoutBtn) {
     logoutBtn.addEventListener('click', () => {
         signOut(auth).then(() => {
@@ -37,7 +35,4 @@ export function updateCartBadge() {
     }
 }
 
-
-
-// Automatically update on page load for whichever page includes navbar.js
 document.addEventListener('DOMContentLoaded', updateCartBadge);

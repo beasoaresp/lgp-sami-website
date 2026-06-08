@@ -39,8 +39,8 @@ body {
     width: 200px;
     height: 200px;
     clip-path: circle(50% at center);
-    display: block;          /* evita espaço extra por baixo das imagens */
-    margin: 0 auto;          /* centra a imagem dentro do div */
+    display: block;
+    margin: 0 auto;
 }
 
 
@@ -49,8 +49,8 @@ body {
     display: flex;
     flex-direction: row;
     gap: 60px;
-    justify-content: center; /* centra os membros horizontalmente */
-    flex-wrap: wrap;         /* evita overflow em ecrãs pequenos */
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .group-photo-preview{
@@ -141,8 +141,6 @@ body {
     opacity: 1;
     transform: translateY(0);
 }
-
-
 
 .team-content div {
     text-align: center;

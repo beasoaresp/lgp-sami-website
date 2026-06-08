@@ -18,7 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     const cloudLicenses = tutorData.ownedLicenses || [];
 
                     if (cloudLicenses.length > 0) {
-                        // FIX: Change 'grid' to 'flex' to preserve your scroll container styling!
                         if (lessonsContainer) lessonsContainer.style.display = 'flex';
                         if (pageTitle) pageTitle.style.display = 'block';
                         if (noLicenseMsg) noLicenseMsg.style.display = 'none';
@@ -38,8 +37,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function showRestrictedUI() {
-        if (pageTitle) pageTitle.style.display = 'block';     // Keeps "Lessons" title up
-        if (lessonsContainer) lessonsContainer.style.display = 'none'; // Hides your side-scroll slider container
-        if (noLicenseMsg) noLicenseMsg.style.display = 'block';        // Shows the clean restricted-access block element card
+        if (pageTitle) pageTitle.style.display = 'block';
+        if (lessonsContainer) lessonsContainer.style.display = 'none';
+        if (noLicenseMsg) noLicenseMsg.style.display = 'block';
     }
 });

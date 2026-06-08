@@ -1,16 +1,14 @@
-// 1. Import our configured auth and db instances
+
 import { auth, db } from './firebase_config.js';
 import { samiAlert } from './alerts.js';
-// 2. Import necessary functions from Firebase Authentication and Firestore SDKs
 import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 import { doc, setDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
 const registerForm = document.getElementById('register-form');
 
 registerForm.addEventListener('submit', async (e) => {
-    e.preventDefault(); // Stop page refresh
+    e.preventDefault();
 
-    // Capture values from input elements
     const firstName = document.getElementById('lfirstname').value;
     const lastName = document.getElementById('llastname').value;
     const birthday = document.getElementById('ldata').value;
@@ -18,19 +16,16 @@ registerForm.addEventListener('submit', async (e) => {
     const password = document.getElementById('lpassword').value;
     const confirmPassword = document.getElementById('lconfirmpassword').value;
 
-    // Simple password confirmation check
+
     if (password !== confirmPassword) {
         samiAlert("Passwords do not match!");
         return;
     }
 
     try {
-        // Step A: Create User account in Firebase Auth
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
         const user = userCredential.user;
 
-        // Step B: Save profile details to Firestore under a "tutors" collection
-        // We use the user's unique 'uid' as the document name so their profile maps perfectly to their account
         await setDoc(doc(db, "tutors", user.uid), {
             firstName: firstName,
             lastName: lastName,
@@ -42,7 +37,7 @@ registerForm.addEventListener('submit', async (e) => {
         });
 
         samiAlert("Registered successfully!");
-        window.location.href = "home_page.html"; // Redirect them to your homepage or a dashboard
+        window.location.href = "home_page.html";
 
     } catch (error) {
         console.error("Registration error details:", error);

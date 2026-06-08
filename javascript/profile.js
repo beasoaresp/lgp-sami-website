@@ -7,7 +7,6 @@ const profileWrapper = document.getElementById('profile-wrapper');
 const logoutBtn = document.getElementById('logout-btn');
 const licenseContainer = document.getElementById('owned-licenses-container');
 
-// Synced Pricing Matrix Dictionary Map matching home/checkout parameters
 const PRICE_LIST = {
     "Individual Monthly Standard": "9,99€/mo",
     "Individual Monthly Premium": "14,99€/mo",
@@ -30,7 +29,6 @@ onAuthStateChanged(auth, async (user) => {
     }
 });
 
-// Separate display and loading pipeline for easy state re-rendering
 async function loadProfileData(user) {
     const docRef = doc(db, "tutors", user.uid);
     const docSnap = await getDoc(docRef);
@@ -55,13 +53,13 @@ async function loadProfileData(user) {
     const initials = (firstName.charAt(0) + lastName.charAt(0)).toUpperCase();
     document.getElementById('avatar-initials').innerText = initials || "T";
 
-    // Dynamic License Render with accurate Prices and Cancel Button listeners
+
     if (licenseContainer) {
         if (cloudLicenses.length === 0) {
             licenseContainer.innerHTML = '<p class="empty-message" style="color: var(--text-main); opacity: 0.6; font-size: 0.95rem; text-align: left;">You haven\'t purchased any licenses yet.</p>';
         } else {
             licenseContainer.innerHTML = cloudLicenses.map(licenseName => {
-                // Formatting helper string utility to cleanly read pricing definitions
+                
                 const priceLabel = PRICE_LIST[licenseName] || "Free Trial";
                 const printableName = licenseName.replace(/-/g, ' ');
 
@@ -87,11 +85,11 @@ async function loadProfileData(user) {
     profileWrapper.style.display = "block";
 }
 
-// Function to handle database element removal operations
+
 function attachCancelListeners(user) {
     const cancelButtons = document.querySelectorAll('.cancel-license-btn');
     cancelButtons.forEach(btn => {
-        // Add subtle style feedback on hover
+
         btn.addEventListener('mouseenter', (e) => {
             e.target.style.background = "#DC554E";
             e.target.style.color = "var(--bg-dark)";
@@ -110,14 +108,11 @@ function attachCancelListeners(user) {
             try {
                 const docRef = doc(db, "tutors", user.uid);
                 
-                // Atomically scrub targeted database string asset entry item entry
                 await updateDoc(docRef, {
                     ownedLicenses: arrayRemove(licenseToCancel)
                 });
 
                 samiAlert("License successfully canceled.");
-                
-                // Force hot-reload of elements block content container locally inside view model
                 await loadProfileData(user);
 
             } catch (error) {

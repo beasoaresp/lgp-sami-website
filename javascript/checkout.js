@@ -83,7 +83,7 @@ if (clearBtn) {
     });
 }
 
-// Handle the checkout flow cleanly
+
 if (checkoutBtn) {
     checkoutBtn.addEventListener('click', async () => {
         const currentCart = JSON.parse(localStorage.getItem('SAMI_CART')) || [];
@@ -93,7 +93,6 @@ if (checkoutBtn) {
             return;
         }
 
-        // CRITICAL CHECK: Make sure the user is actually logged in before processing payment
         const user = auth.currentUser;
         if (!user) {
             samiAlert('You must be logged in to purchase a license!');
@@ -102,18 +101,13 @@ if (checkoutBtn) {
         }
 
         try {
-            // 1. Target this tutor's distinct document reference in Firestore
             const docRef = doc(db, "tutors", user.uid);
-
-            // 2. Extract just the item names from the cart array
             const purchasedLicenseNames = currentCart.map(item => item.name);
 
-            // 3. Save directly to Firebase using arrayUnion (avoids duplicates)
             await updateDoc(docRef, {
                 ownedLicenses: arrayUnion(...purchasedLicenseNames)
             });
 
-            // 4. Clear the local checkout cart since the database transaction succeeded
             localStorage.removeItem('SAMI_CART'); 
             renderCart();
             updateCartBadge();
@@ -128,5 +122,4 @@ if (checkoutBtn) {
     });
 }
 
-// FIX: Run the function immediately when the script executes so items actually display!
 renderCart();

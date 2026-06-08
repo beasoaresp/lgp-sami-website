@@ -1,12 +1,15 @@
 
+/* ==========================================================================
+   HOME PAGE ANIMATION
+   ========================================================================== */
+
+
 document.addEventListener("DOMContentLoaded", () => {
-    // Alvos a animar
     const acronym = document.querySelector(".brand-info .acronym");
     const slogan = document.querySelector(".brand-info .slogan");
     const text = document.querySelector(".brand-info .text");
     const image = document.querySelector(".mockup-image");
 
-    // Injeta a classe de visibilidade com um micro-atraso para o browser processar o estilo inicial
     setTimeout(() => {
         if (acronym) acronym.classList.add("reveal-visible");
         if (slogan) slogan.classList.add("reveal-visible");
@@ -14,6 +17,10 @@ document.addEventListener("DOMContentLoaded", () => {
         if (image) image.classList.add("reveal-visible");
     }, 150);
 });
+
+/* ==========================================================================
+   TEAM ANIMATION
+   ========================================================================== */
 
 const Members = document.querySelectorAll(".team-departments");
 
@@ -39,13 +46,9 @@ Members.forEach(card => {
 });
 
 
-
-
-
-
-
-
-
+/* ==========================================================================
+   FEATURES CARDS FLIP ANIMATION
+   ========================================================================== */
 
 document.querySelectorAll(".feature-card").forEach(card => {
     card.addEventListener("mouseenter", () => {
@@ -57,6 +60,9 @@ document.querySelectorAll(".feature-card").forEach(card => {
     });
 });
 
+/* ==========================================================================
+   LICENSE TABS ANIMATION
+   ========================================================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
     const tabs = document.querySelectorAll(".tab-btn");
@@ -64,16 +70,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     tabs.forEach(tab => {
         tab.addEventListener("click", () => {
-            // 1. Remove a classe activa de todos os botões
             tabs.forEach(btn => btn.classList.remove("active"));
-            
-            // 2. Esconde todos os blocos de conteúdo
             contents.forEach(content => content.classList.remove("active"));
 
-            // 3. Ativa o botão atual
             tab.classList.add("active");
 
-            // 4. Mostra o conteúdo correspondente baseado no atributo data-target
             const targetId = tab.getAttribute("data-target");
             document.getElementById(targetId).classList.add("active");
         });

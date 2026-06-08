@@ -338,16 +338,16 @@ body {
 }
 
 /* ==========================================================================
-   SAMI CUSTOM ALERTS (TOAST NOTIFICATIONS)
+   SAMI ALERTS
    ========================================================================== */
 
 .sami-toast {
     position: fixed;
     top: 30px;
     left: 50%;
-    background-color: #1E1E1E; /* var(--bg-dark) */
-    color: #F0EFEF;            /* var(--text-main) */
-    border: 1px solid #6DD4BE; /* var(--accent-cyan) */
+    background-color: #1E1E1E;
+    color: #F0EFEF;
+    border: 1px solid #6DD4BE;
     padding: 16px 28px;
     border-radius: 12px;
     font-family: 'SamiFont', sans-serif;
@@ -356,13 +356,11 @@ body {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(109, 212, 190, 0.15);
     z-index: 10000;
     
-    /* Animação de entrada e saída */
     transform: translate(-50%, -100px);
     opacity: 0;
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
 }
 
-/* Estado ativo quando aparece no ecrã */
 .sami-toast.toast-show {
     transform: translate(-50%, 0);
     opacity: 1;
