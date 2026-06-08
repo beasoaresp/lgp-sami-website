@@ -228,3 +228,7 @@ input::placeholder {
 .register a:hover {
     font-weight: bold;
 }
+
+#btn-container {
+    margin-top: 0;
+}
