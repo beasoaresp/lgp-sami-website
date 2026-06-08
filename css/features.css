@@ -50,6 +50,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     width: 100%;
 }
 
@@ -62,6 +63,12 @@
     
 }
 
+.features-title {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 40px;
+}
+
 .features-title h1 {
     font-family: 'SamiFont', sans-serif;
     font-size: 1.8rem;
@@ -69,15 +76,15 @@
     letter-spacing: -1px;
     margin: 0 0 20px 0;
     color: var(--accent-cyan);
+    grid-column: 2;
     
-    display: inline-block;
 }
 
 .tracking-features > div {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 20px;
-    padding: 30px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -97,8 +104,29 @@
 .feature-title {
     font-size: 1rem;
     text-align: center;
-    font-weight: 500;
-    margin-bottom: 30px;
+    font-weight: 700;
+    margin-bottom: 0px;
+}
+
+.feature-details {
+    font-size: 15px;
+    text-align: center;
+    opacity: 60%;
+    margin: 0;
+}
+
+.feature-titleb {
+    font-size: 1rem;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.feature-detailsb {
+    font-size: 15px;
+    text-align: center;
+    opacity: 60%;
+    margin-top: 10px;
 }
 
 
@@ -163,7 +191,7 @@
     -webkit-backface-visibility: hidden;
 
     border-radius: 12px;
-    padding: 20px;
+    padding: 10px;
     box-sizing: border-box;
 }
 

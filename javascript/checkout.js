@@ -3,8 +3,13 @@ import { doc, updateDoc, arrayUnion } from "https://www.gstatic.com/firebasejs/1
 import { updateCartBadge } from './navbar.js';
 
 const PRICE_LIST = {
-    "Individual License": 49.99,
-    "Institutional License": 299.99
+    "Individual Monthly Standard": 9.99,
+    "Individual Monthly Premium": 14.99,
+    "Individual Yearly Standard": 7.99,
+    "Individual Yearly Premium": 11.99,
+    "Institutional 1-10 Users": 575.50,
+    "Institutional 11-30 Users": 748.20,
+    "Institutional 31+ Users": 1458.99
 };
 
 const itemsContainer = document.getElementById('cart-items-container');
