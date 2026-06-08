@@ -69,6 +69,21 @@
     gap: 40px;
 }
 
+.licenses-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.licenses-title h1 {
+    font-family: 'SamiFont', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin: 0 0 20px 0;
+    color: var(--accent-cyan);
+}
+
 .features-title h1 {
     font-family: 'SamiFont', sans-serif;
     font-size: 1.8rem;
