@@ -165,15 +165,13 @@ body {
 }
 
 /* ==========================================================================
-   ANIMAÇÃO DE ENTRADA (INTRO REVEAL)
+   ANIMATION
    ========================================================================== */
 
-/* Estado inicial oculto para os elementos de texto */
 .brand-info .acronym,
 .brand-info .slogan,
 .brand-info .text,
 .mockup-image {
-    margin-top: -100px;
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), 
@@ -181,7 +179,6 @@ body {
     will-change: opacity, transform;
 }
 
-/* Estado ativo injetado pelo JavaScript */
 .brand-info .acronym.reveal-visible,
 .brand-info .slogan.reveal-visible,
 .brand-info .text.reveal-visible,
@@ -190,7 +187,7 @@ body {
     transform: translateY(0);
 }
 
-/* Delays cirúrgicos para criar o efeito de cascata (um a seguir ao outro) */
+
 .brand-info .acronym.reveal-visible {
     transition-delay: 0.1s;
 }
@@ -204,7 +201,6 @@ body {
     transform: translateY(0);
 }
 
-/* A imagem surge do lado direito com um embalo elegante */
 .mockup-image.reveal-visible {
     transition-delay: 0.55s;
     transform: translateY(0) scale(1);
@@ -341,3 +337,33 @@ body {
     }
 }
 
+/* ==========================================================================
+   SAMI CUSTOM ALERTS (TOAST NOTIFICATIONS)
+   ========================================================================== */
+
+.sami-toast {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #1E1E1E; /* var(--bg-dark) */
+    color: #F0EFEF;            /* var(--text-main) */
+    border: 1px solid #6DD4BE; /* var(--accent-cyan) */
+    padding: 16px 28px;
+    border-radius: 12px;
+    font-family: 'SamiFont', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(109, 212, 190, 0.15);
+    z-index: 10000;
+    
+    /* Animação de entrada e saída */
+    transform: translateY(100px);
+    opacity: 0;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
+}
+
+/* Estado ativo quando aparece no ecrã */
+.sami-toast.toast-show {
+    transform: translateY(0);
+    opacity: 1;
+}

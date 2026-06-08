@@ -14,8 +14,7 @@
 }
 
 .contact-container {
-    margin-top: 120px;
-    margin: 150px auto 0; /* Space above/below */
+    margin: 150px auto 0;
     padding: 0 150px;
     position: relative;
     border-top: 1px solid rgba(255, 255, 255, 0.03);
@@ -31,7 +30,7 @@
 .section-title {
     color: #F0EFEF;
     font-size: 2.5rem;
-    font-weight: 300; /* Modern, light font weight */
+    font-weight: 300;
     margin: 0;
     text-transform: uppercase;
 }
@@ -43,7 +42,7 @@
 }
 
 .form-col {
-    flex: 1; /* Both columns share equal width */
+    flex: 1;
 }
 
 .input-group {
@@ -59,47 +58,43 @@
     font-size: 1.1rem;
 }
 
-/* Input/Textarea Fields */
 .input-group input,
 .input-group textarea {
     width: 100%;
     padding: 15px;
-    background: rgba(0, 0, 0, 0.2); /* Deep dark background */
-    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle light border */
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
     color: #F0EFEF;
     font-family: 'SamiFont', sans-serif;
     font-size: 1rem;
-    box-sizing: border-box; /* Crucial for width: 100% */
+    box-sizing: border-box;
     transition: all 0.3s ease;
 }
 
 .input-group textarea {
-    height: 170px; /* Matching the height of the two inputs on the left */
-    resize: none; /* Prevents user from breaking the layout */
+    height: 170px;
+    resize: none;
 }
 
-/* Placeholder text color */
+
 .input-group input::placeholder,
 .input-group textarea::placeholder {
     color: rgba(240, 239, 239, 0.3);
 }
 
-/* THE GLOW EFFECT (on Focus) */
 .input-group input:focus,
 .input-group textarea:focus {
     outline: none;
-    border-color: #6DD4BE; /* Cyan Glow Border */
-    background: rgba(109, 212, 190, 0.03); /* Subtle cyan tint */
+    border-color: #6DD4BE;
+    background: rgba(109, 212, 190, 0.03);
     box-shadow: 0 0 15px rgba(109, 212, 190, 0.4);
 }
 
-/* Submit Button Centering */
 .submit-container {
     text-align: center;
 }
 
-/* Reusing your SAMI 'button' styles but slightly tweaked for form submission */
 .button {
     background: #6DD4BE;
     color: #1E1E1E;
@@ -117,5 +112,4 @@
 .button:hover {
     box-shadow: 0 0 20px rgba(80, 155, 139, 0.8);
     transform: translateY(-2px);
-    background: #416268;
 }
