@@ -1,5 +1,6 @@
 // 1. Import your configured auth helper instance from your config file
 import { auth } from './firebase_config.js';
+import { samiAlert } from './alerts.js';
 
 // 2. Import the official Firebase sign-in method
 import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
@@ -19,7 +20,7 @@ loginForm.addEventListener('submit', (e) => {
             // Login successful!
             const user = userCredential.user;
             console.log("Logged in successfully:", user.uid);
-            alert("Welcome back!");
+            samiAlert("Welcome back!");
             
             // Redirect the user to your main app page or protected page
             window.location.href = "resources.html";
@@ -30,9 +31,9 @@ loginForm.addEventListener('submit', (e) => {
             
             // Provide a friendly error alert
             if (error.code === 'auth/invalid-credential') {
-                alert("Incorrect email or password. Please try again.");
+                samiAlert("Incorrect email or password. Please try again.");
             } else {
-                alert("Login Error: " + error.message);
+                samiAlert("Login Error: " + error.message);
             }
         });
 });

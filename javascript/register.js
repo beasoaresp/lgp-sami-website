@@ -1,6 +1,6 @@
 // 1. Import our configured auth and db instances
 import { auth, db } from './firebase_config.js';
-
+import { samiAlert } from './alerts.js';
 // 2. Import necessary functions from Firebase Authentication and Firestore SDKs
 import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 import { doc, setDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
@@ -20,7 +20,7 @@ registerForm.addEventListener('submit', async (e) => {
 
     // Simple password confirmation check
     if (password !== confirmPassword) {
-        alert("Passwords do not match!");
+        samiAlert("Passwords do not match!");
         return;
     }
 
@@ -41,11 +41,11 @@ registerForm.addEventListener('submit', async (e) => {
             createdAt: new Date()
         });
 
-        alert("Tutor registered successfully!");
+        samiAlert("Registered successfully!");
         window.location.href = "home_page.html"; // Redirect them to your homepage or a dashboard
 
     } catch (error) {
         console.error("Registration error details:", error);
-        alert("Error creating account: " + error.message);
+        samiAlert("Error creating account: " + error.message);
     }
 });

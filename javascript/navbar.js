@@ -1,3 +1,4 @@
+import { samiAlert } from './alerts.js';
 import { auth } from './firebase_config.js';
 import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
@@ -22,7 +23,7 @@ onAuthStateChanged(auth, (user) => {
 if (logoutBtn) {
     logoutBtn.addEventListener('click', () => {
         signOut(auth).then(() => {
-            alert("Logged out successfully!");
+            samiAlert("Logged out successfully!");
             window.location.href = "home_page.html";
         });
     });

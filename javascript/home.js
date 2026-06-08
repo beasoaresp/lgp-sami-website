@@ -1,5 +1,6 @@
 // javascript/home.js
 import { updateCartBadge } from './navbar.js';
+import { samiAlert } from './alerts.js';
 
 // 1. Get the current cart state from localStorage
 let cart = JSON.parse(localStorage.getItem('SAMI_CART')) || [];
@@ -24,7 +25,7 @@ function addToCart(event) {
     // Refresh the badge using the imported function
     updateCartBadge();
     
-    alert(`${itemName} has been added to your cart!`);
+    samiAlert(`${itemName} has been added to your cart!`);
 }
 
 // 4. Attach listeners

@@ -1,4 +1,5 @@
 import { auth, db } from './firebase_config.js';
+import { samiAlert, samiConfirm } from './alerts.js';
 import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 import { doc, getDoc, updateDoc, arrayRemove } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
@@ -102,7 +103,7 @@ function attachCancelListeners(user) {
 
         btn.addEventListener('click', async (e) => {
             const licenseToCancel = e.currentTarget.getAttribute('data-license');
-            const userConfirmed = confirm(`Are you sure you want to cancel your registration for: "${licenseToCancel.replace(/-/g, ' ')}"?`);
+            const userConfirmed = await samiConfirm(`Are you sure you want to cancel your registration for: "${licenseToCancel.replace(/-/g, ' ')}"?`);
             
             if (!userConfirmed) return;
 
@@ -114,14 +115,14 @@ function attachCancelListeners(user) {
                     ownedLicenses: arrayRemove(licenseToCancel)
                 });
 
-                alert("License successfully canceled.");
+                samiAlert("License successfully canceled.");
                 
                 // Force hot-reload of elements block content container locally inside view model
                 await loadProfileData(user);
 
             } catch (error) {
                 console.error("Database operation error during subscription cancellation:", error);
-                alert("Failed to reach server. Subscription cancel operation dropped.");
+                samiAlert("Failed to reach server. Subscription cancel operation dropped.");
             }
         });
     });
@@ -131,8 +132,10 @@ if (logoutBtn) {
     logoutBtn.addEventListener('click', () => {
         signOut(auth)
             .then(() => {
-                alert("Logged out successfully!");
-                window.location.href = "login_register.html";
+                samiAlert("Logged out successfully!");
+                setTimeout(() => {
+                    window.location.href = "login_register.html";
+                }, 1500);
             })
             .catch((error) => {
                 console.error("Logout error:", error);

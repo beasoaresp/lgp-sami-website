@@ -1,6 +1,7 @@
 import { auth, db } from './firebase_config.js';
 import { doc, updateDoc, arrayUnion } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 import { updateCartBadge } from './navbar.js';
+import { samiAlert } from './alerts.js';
 
 const PRICE_LIST = {
     "Individual Monthly Standard": 9.99,
@@ -88,14 +89,14 @@ if (checkoutBtn) {
         const currentCart = JSON.parse(localStorage.getItem('SAMI_CART')) || [];
 
         if (currentCart.length === 0) {
-            alert('Your cart is empty!');
+            samiAlert('Your cart is empty!');
             return;
         }
 
         // CRITICAL CHECK: Make sure the user is actually logged in before processing payment
         const user = auth.currentUser;
         if (!user) {
-            alert('You must be logged in to purchase a license!');
+            samiAlert('You must be logged in to purchase a license!');
             window.location.href = 'login_register.html';
             return;
         }
@@ -117,12 +118,12 @@ if (checkoutBtn) {
             renderCart();
             updateCartBadge();
 
-            alert('Payment successful! Licenses permanently added to your cloud account.');
+            samiAlert('Payment successful! Licenses permanently added to your account.');
             window.location.href = 'profile.html';
 
         } catch (error) {
             console.error("Database write error during checkout:", error);
-            alert("Payment failed while contacting account database. Please try again.");
+            samiAlert("Payment failed while contacting account database. Please try again.");
         }
     });
 }

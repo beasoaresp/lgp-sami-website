@@ -1,4 +1,5 @@
 import { updateCartBadge } from './navbar.js';
+import { samiAlert } from './alerts.js';
 
 let cart = JSON.parse(localStorage.getItem('SAMI_CART')) || [];
 const addToCartButtons = document.querySelectorAll('.currency-badge[data-item]');
@@ -14,7 +15,7 @@ function addToCart(event) {
     localStorage.setItem('SAMI_CART', JSON.stringify(cart));
     updateCartBadge();
     
-    alert(`${itemName} has been added to your cart!`);
+    samiAlert(`${itemName} has been added to your cart!`);
 }
 
 addToCartButtons.forEach(button => {
