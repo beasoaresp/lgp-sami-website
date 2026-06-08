@@ -365,3 +365,99 @@ body {
     transform: translate(-50%, 0);
     opacity: 1;
 }
+
+.sami-alert-highlight {
+    color: #6DD4BE;
+    font-weight: 700;
+    font-family: 'SamiFont', sans-serif;
+}
+
+/* ==========================================================================
+   SAMI CONFIRM ALERT
+   ========================================================================== */
+
+.sami-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 110000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.sami-modal-box {
+    background-color: #1E1E1E;
+    border: 1px solid #6DD4BE;
+    color: #F0EFEF;
+    padding: 30px;
+    border-radius: 16px;
+    font-family: 'SamiFont', sans-serif;
+    max-width: 450px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 25px rgba(109, 212, 190, 0.1);
+    transform: scale(0.8);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.sami-modal-overlay.modal-show {
+    opacity: 1;
+}
+
+.sami-modal-overlay.modal-show .sami-modal-box {
+    transform: scale(1);
+}
+
+.sami-modal-text {
+    font-size: 1.05rem;
+    line-height: 1.5;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.sami-modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.sami-btn-confirm {
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-family: 'SamiFont', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background-color: #6DD4BE;
+    color: #1E1E1E;
+    border: none;
+}
+
+.sami-btn-confirm:hover {
+    box-shadow: 0 0 15px #6DD4BE;
+}
+
+.sami-btn-cancel {
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-family: 'SamiFont', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: none;
+    border: 1px solid rgba(240, 239, 239, 0.3);
+    color: #F0EFEF;
+}
+
+.sami-btn-cancel:hover {
+    background-color: rgba(240, 239, 239, 0.1);
+    border-color: #F0EFEF;
+}

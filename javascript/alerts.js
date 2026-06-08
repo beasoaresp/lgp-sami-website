@@ -4,7 +4,7 @@ export function samiAlert(message) {
     // 1. Cria o elemento dinamicamente
     const toast = document.createElement('div');
     toast.className = 'sami-toast';
-    toast.innerText = message;
+    toast.innerHTML = message;
     
     document.body.appendChild(toast);
     
@@ -28,7 +28,7 @@ export function samiConfirm(message) {
                 <div class="sami-modal-text">${message}</div>
                 <div class="sami-modal-buttons">
                     <button class="sami-btn-cancel" id="sami-modal-cancel">Cancel</button>
-                    <button class="sami-btn-confirm" id="sami-modal-ok">Yes, Sure</button>
+                    <button class="sami-btn-confirm" id="sami-modal-ok">Yes</button>
                 </div>
             </div>
         `;

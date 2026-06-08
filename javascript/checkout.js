@@ -1,7 +1,7 @@
 import { auth, db } from './firebase_config.js';
-import { doc, updateDoc, arrayUnion } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+import { doc, getDoc, updateDoc, arrayUnion } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 import { updateCartBadge } from './navbar.js';
-import { samiAlert } from './alerts.js';
+import { samiAlert, samiConfirm } from './alerts.js';
 
 const PRICE_LIST = {
     "Individual Monthly Standard": 9.99,
@@ -89,7 +89,7 @@ if (checkoutBtn) {
         const currentCart = JSON.parse(localStorage.getItem('SAMI_CART')) || [];
 
         if (currentCart.length === 0) {
-            samiAlert('Your cart is empty!');
+            samiAlert('Your cart is empty! Please add a license');
             return;
         }
 
@@ -102,18 +102,52 @@ if (checkoutBtn) {
 
         try {
             const docRef = doc(db, "tutors", user.uid);
-            const purchasedLicenseNames = currentCart.map(item => item.name);
+            const docSnap = await getDoc(docRef);
+            
+            if (!docSnap.exists()) {
+                samiAlert("User profile not found.");
+                return;
+            }
 
-            await updateDoc(docRef, {
-                ownedLicenses: arrayUnion(...purchasedLicenseNames)
-            });
+            const tutorData = docSnap.data();
+            const currentLicenses = tutorData.ownedLicenses || [];
+            const nextLicense = tutorData.nextLicense || null;
+            const newLicenseName = currentCart[0].name;
+
+            if (currentLicenses.includes(newLicenseName) || nextLicense === newLicenseName) {
+                samiAlert(`<span class="sami-alert-highlight">${newLicenseName}</span> has already been purchased for this account!`);
+                return;
+            }
+
+            if (currentLicenses.length > 0) {
+                const confirmExchange = await samiConfirm(
+                    `You already have an active subscription. Do you want to update <span class="sami-alert-highlight">${newLicenseName}</span> as your next license? <br><br><span style="color: #DC554E; font-size: 0.85rem;">Warning: The funds will be automatically charged the moment this new plan starts.</span>`
+                );
+
+                if (!confirmExchange) return;
+
+                await updateDoc(docRef, {
+                    nextLicense: newLicenseName
+                });
+                
+                // MENSAGEM CORRIGIDA: Sem "payment successful/processed"
+                samiAlert(`<span class="sami-alert-highlight">${newLicenseName}</span> has been successfully placed in the queue. Payment will be processed once the new trial begins!`);
+            } 
+            else {
+                await updateDoc(docRef, {
+                    ownedLicenses: arrayUnion(newLicenseName)
+                });
+                
+                samiAlert(`Payment successful! <span class="sami-alert-highlight">${newLicenseName}</span> is now active.`);
+            }
 
             localStorage.removeItem('SAMI_CART'); 
             renderCart();
             updateCartBadge();
 
-            samiAlert('Payment successful! Licenses permanently added to your account.');
-            window.location.href = 'profile.html';
+            setTimeout(() => {
+                window.location.href = 'profile.html';
+            }, 2000);
 
         } catch (error) {
             console.error("Database write error during checkout:", error);
