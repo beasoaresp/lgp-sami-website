@@ -5,8 +5,8 @@ import { updateCartBadge } from './navbar.js';
 const PRICE_LIST = {
     "Individual Monthly Standard": 9.99,
     "Individual Monthly Premium": 14.99,
-    "Individual Yearly Standard": 7.99,
-    "Individual Yearly Premium": 11.99,
+    "Individual Yearly Standard": 95.99,
+    "Individual Yearly Premium": 143.99,
     "Institutional 1-10 Users": 575.50,
     "Institutional 11-30 Users": 748.20,
     "Institutional 31+ Users": 1458.99
