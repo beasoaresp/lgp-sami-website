@@ -19,7 +19,7 @@ const Members = document.querySelectorAll(".team-departments");
 
 const observerConfig = {
     threshold: 0.1,
-    rootMargin: "0px 0px -50px 0px"
+    rootMargin: "0px 0px -200px 0px"
 };
 
 function animarEntrada(entries, observer) {
